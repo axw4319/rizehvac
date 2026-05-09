@@ -1,6 +1,6 @@
 import { v2Vars } from "@/lib/v2theme";
 import { V2Header } from "./V2Header";
-import { HeroLifestyle } from "./HeroLifestyle";
+import { HeroEditorial } from "./HeroEditorial";
 import { MultiCreditByline } from "./MultiCreditByline";
 import { FaqBlock } from "@/components/shared/FaqBlock";
 import { SiteFooter } from "@/components/shared/SiteFooter";
@@ -12,7 +12,7 @@ export function CostGuidePage({ city }: { city: CityData }) {
   return (
     <div style={{ ...v2Vars, background: "var(--brand-bg)", minHeight: "100vh", color: "var(--brand-fg)" }}>
       <V2Header phone={city.phone} cityLabel={city.meta.city} />
-      <HeroLifestyle
+      <HeroEditorial
         city={city}
         headline={`How much does HVAC cost in ${city.meta.city}? 2026 prices and rebates`}
         subhead={`Real ${city.meta.city} HVAC pricing benchmarks, 4 stackable rebate programs, and what's worth paying for. Updated quarterly with data from local installs.`}

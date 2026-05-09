@@ -1,6 +1,6 @@
 import { v2Vars } from "@/lib/v2theme";
 import { V2Header } from "./V2Header";
-import { HeroLifestyle } from "./HeroLifestyle";
+import { HeroEditorial } from "./HeroEditorial";
 import { MultiCreditByline } from "./MultiCreditByline";
 import { ComparisonTable } from "./ComparisonTable";
 import { VerifiedReviewsCarousel } from "./VerifiedReviewsCarousel";
@@ -36,7 +36,7 @@ export function ServiceCityPage({ city }: { city: CityData }) {
   return (
     <div style={{ ...v2Vars, background: "var(--brand-bg)", minHeight: "100vh", color: "var(--brand-fg)" }}>
       <V2Header phone={city.phone} cityLabel={city.meta.city} />
-      <HeroLifestyle
+      <HeroEditorial
         city={city}
         headline={`AC repair in ${city.meta.city}: who to call when your unit fails`}
         subhead={`Our top-rated ${city.meta.city} contractors for repair calls — ranked by speed, transparency, and repair-only specialization. Same-day appointments available for emergencies.`}
