@@ -2,9 +2,9 @@ import { ShieldCheck } from "lucide-react";
 import type { EditorialCredits } from "@/data/types";
 
 const AVATAR_GRADIENTS: Record<string, string> = {
-  JM: "linear-gradient(135deg, #0E5340 0%, #2E8C6F 100%)",
+  AW: "linear-gradient(135deg, #0A1F3E 0%, #3FA9F5 100%)",  // Aaron — Tundra navy/blue
   LP: "linear-gradient(135deg, #743A2E 0%, #C28A2A 100%)",
-  CM: "linear-gradient(135deg, #1A2944 0%, #3F5A85 100%)",
+  NT: "linear-gradient(135deg, #1A2944 0%, #3F5A85 100%)",  // NATE Tech (TBD)
 };
 
 function gradientFor(initials: string) {
@@ -12,9 +12,8 @@ function gradientFor(initials: string) {
 }
 
 const NAME_TO_SLUG: Record<string, string> = {
-  "Jordan Marshall": "jordan-marshall",
+  "Aaron Whittaker": "aaron-whittaker",
   "Lena Park": "lena-park",
-  "Carlos Mendoza": "carlos-mendoza",
 };
 
 function Person({

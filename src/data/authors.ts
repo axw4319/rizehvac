@@ -14,30 +14,33 @@ export type Author = {
 };
 
 export const AUTHORS: Record<string, Author> = {
-  "jordan-marshall": {
-    slug: "jordan-marshall",
-    name: "Jordan Marshall",
-    initials: "JM",
-    role: "Senior HVAC Editor",
-    shortBio: "12 years covering home services. Previously led HVAC content at Bob Vila.",
+  "aaron-whittaker": {
+    // PLACEHOLDER pending Aaron's verified bio info (photo, LinkedIn URL,
+    // exact title, bio paragraphs, credentials). When Aaron lands those:
+    // 1. Replace shortBio + longBio + credentials + sameAs + email
+    // 2. Drop a real headshot at /public/photos/aaron-whittaker.jpg
+    // 3. Update authors[].photoUrl to point at it
+    slug: "aaron-whittaker",
+    name: "Aaron Whittaker",
+    initials: "AW",
+    role: "Founder + Dallas-area HVAC Editor",
+    shortBio: "Dallas-Fort Worth resident. Bio + LinkedIn details pending.",
     longBio: [
-      "Jordan Marshall is the Senior HVAC Editor at rizehvac, where they lead the editorial research process for every city ranking we publish. Their job is to read every BBB filing, every state license record, and every public review for the contractors we evaluate — then translate that into rankings homeowners can actually use.",
-      "Before rizehvac, Jordan led HVAC editorial coverage at Bob Vila for four years and was a senior contributor to Family Handyman's home-systems vertical. Their reporting on heat pump rebate stacking was cited by the Department of Energy in 2024.",
-      "Jordan does not accept gifts, sponsorships, or compensation from any HVAC contractor we cover. Editorial decisions are independent of rizehvac's lead-share business.",
+      "Aaron Whittaker founded rizehvac and leads editorial coverage for Dallas-Fort Worth — the metro he lives in. His role is to verify every contractor we rank against his direct local knowledge, BBB filings, TDLR license records, and homeowner reviews.",
+      "Aaron's bio + LinkedIn + prior bylines are being added shortly.",
+      "Aaron does not accept gifts, sponsorships, or compensation from any HVAC contractor we cover. Editorial decisions are independent of rizehvac's lead-share business.",
     ],
     credentials: [
-      "12 years home services editorial",
-      "BS Mechanical Engineering, Texas A&M",
-      "Member, Society of Professional Journalists",
+      "DFW resident — local field verification",
+      "Founder, rizehvac",
     ],
-    joined: "January 2026",
-    expertiseAreas: ["HVAC contractor evaluation", "Heat pump rebates", "AC sizing + Manual J", "BBB + state licensing analysis"],
-    bylineCount: 47,
+    joined: "May 2026",
+    expertiseAreas: ["DFW HVAC contractor evaluation", "Texas TDLR licensing", "Local market knowledge"],
+    bylineCount: 1,
     sameAs: [
-      "https://www.linkedin.com/in/jordan-marshall-hvac",
-      "https://muckrack.com/jordan-marshall",
+      "https://www.linkedin.com/in/aaronwhittaker",
     ],
-    email: "jordan@rizehvac.com",
+    email: "aaron@rizehvac.com",
   },
   "lena-park": {
     slug: "lena-park",
@@ -64,32 +67,8 @@ export const AUTHORS: Record<string, Author> = {
     ],
     email: "lena@rizehvac.com",
   },
-  "carlos-mendoza": {
-    slug: "carlos-mendoza",
-    name: "Carlos Mendoza",
-    initials: "CM",
-    role: "NATE-Certified Master Technician — Fact Checker",
-    shortBio: "22 years installing HVAC in Arizona desert markets. NATE Master cert.",
-    longBio: [
-      "Carlos Mendoza is rizehvac's technical fact-checker. He has personally installed and serviced HVAC systems across Tucson, Phoenix, El Paso, and Las Vegas for the past 22 years — long enough to know which contractor brands hold up in 110°F heat and which fail in five.",
-      "Carlos holds NATE Master Technician certification (Heat Pumps, Gas Heating, Air Conditioning, and Air Distribution), EPA Section 608 Universal certification, and an Arizona ROC C-39 Air Conditioning Refrigeration license. Before joining rizehvac, he ran a residential install crew for D&H Air Conditioning and trained junior technicians at Pima Community College's HVAC program.",
-      "Carlos personally verifies the license status, certification claims, and installation portfolio of every contractor we rank. He has no financial relationship with any contractor on any list.",
-    ],
-    credentials: [
-      "NATE Master Technician (HP, GH, AC, AD)",
-      "EPA Section 608 Universal",
-      "AZ ROC C-39 license #SAMPLE-12345",
-      "Adjunct instructor, Pima Community College HVAC program",
-    ],
-    joined: "February 2026",
-    expertiseAreas: ["Desert HVAC sizing", "Manual J load calculation", "Refrigerant transition R-22 → R-410A → R-454B", "Contractor installation quality audits"],
-    bylineCount: 12,
-    sameAs: [
-      "https://www.linkedin.com/in/carlos-mendoza-hvac",
-      "https://natex.org/profile/carlos-mendoza-sample",
-    ],
-    email: "carlos@rizehvac.com",
-  },
+  // carlos-mendoza removed — was tied to Tucson POC. Aaron is sourcing a
+  // real DFW NATE-certified tech for the fact-checker role.
 };
 
 export function listAuthorSlugs(): string[] {

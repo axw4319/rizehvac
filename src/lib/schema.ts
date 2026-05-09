@@ -8,7 +8,7 @@
  * Wiring helpers into pages is intentionally NOT done here.
  */
 
-import type { Contractor } from "@/data/tucson-contractors";
+import type { Contractor } from "@/data/types";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://rizehvac.com";

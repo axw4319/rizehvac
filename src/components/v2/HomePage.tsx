@@ -27,16 +27,16 @@ const HERO_TRUST = [
 ];
 
 const CITY_LABELS: Record<string, { city: string; state: string; tagline: string }> = {
-  tucson: { city: "Tucson", state: "AZ", tagline: "1M metro · 100+ days over 100°F" },
+  dallas: { city: "Dallas", state: "TX", tagline: "7.6M metro · 110+ days over 90°F annually" },
+  "fort-worth": { city: "Fort Worth", state: "TX", tagline: "Tarrant County · brick-home retrofits" },
+  arlington: { city: "Arlington", state: "TX", tagline: "Mid-cities DFW · stadium district" },
+  plano: { city: "Plano", state: "TX", tagline: "North DFW · Fortune 500 corridor" },
+  frisco: { city: "Frisco", state: "TX", tagline: "Far North DFW · post-2010 builds" },
+  houston: { city: "Houston", state: "TX", tagline: "7.5M metro · humid Gulf summers" },
+  austin: { city: "Austin", state: "TX", tagline: "2.4M metro · tech-corridor growth" },
+  "san-antonio": { city: "San Antonio", state: "TX", tagline: "2.6M metro · year-round cooling" },
   phoenix: { city: "Phoenix", state: "AZ", tagline: "5M metro · America's hottest large city" },
-  albuquerque: { city: "Albuquerque", state: "NM", tagline: "920K metro · high-desert HVAC demand" },
-  tulsa: { city: "Tulsa", state: "OK", tagline: "1M metro · tornado-alley extremes" },
-  "oklahoma-city": { city: "Oklahoma City", state: "OK", tagline: "1.4M metro · plains weather" },
-  "las-vegas": { city: "Las Vegas", state: "NV", tagline: "2.3M metro · extreme summer heat" },
-  "el-paso": { city: "El Paso", state: "TX", tagline: "850K metro · dry desert climate" },
-  memphis: { city: "Memphis", state: "TN", tagline: "1.3M metro · humid summers" },
-  tampa: { city: "Tampa", state: "FL", tagline: "3.1M metro · year-round AC demand" },
-  knoxville: { city: "Knoxville", state: "TN", tagline: "870K metro · Smoky Mountains foothills" },
+  atlanta: { city: "Atlanta", state: "GA", tagline: "6.1M metro · humid southeast" },
 };
 
 function StarRow({ count = 5 }: { count?: number }) {
@@ -65,7 +65,7 @@ export function HomePage() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="/photos/tucson-hero-2400.webp"
+            src="/photos/dallas-hero-2400.webp"
             alt="A NATE-certified HVAC technician inspecting a Trane condenser at a home"
             fill
             priority

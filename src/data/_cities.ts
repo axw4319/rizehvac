@@ -1,14 +1,17 @@
-// Canonical city list. Agent 1 may extend this with full CityData per slug.
-// Today: just slug strings; sitemap.ts only needs slugs.
+// Master list of city slugs we'll cover (rendered as tiles on the home grid).
+// Order = launch sequence. DFW first (Aaron is local), then Texas, then national.
+//
+// Live status comes from cityRegistry.ts — only registered slugs get
+// indexable URLs + sitemap entries. The rest render as "coming soon" tiles.
 export const CITIES: string[] = [
-  "tucson",
+  "dallas",
+  "fort-worth",
+  "arlington",
+  "plano",
+  "frisco",
+  "houston",
+  "austin",
+  "san-antonio",
   "phoenix",
-  "albuquerque",
-  "tulsa",
-  "oklahoma-city",
-  "las-vegas",
-  "el-paso",
-  "memphis",
-  "tampa",
-  "knoxville",
+  "atlanta",
 ];

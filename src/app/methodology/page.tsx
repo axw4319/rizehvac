@@ -3,7 +3,7 @@ import { v2Vars } from "@/lib/v2theme";
 import { V2Header } from "@/components/v2/V2Header";
 import { SiteFooter } from "@/components/shared/SiteFooter";
 import { BRANDS } from "@/lib/brands";
-import { TUCSON_EDITORIAL_CREDITS, TUCSON_METHODOLOGY_CRITERIA } from "@/data/tucson-reviews";
+import { DALLAS_EDITORIAL_CREDITS, DALLAS_METHODOLOGY_CRITERIA } from "@/data/dallas-reviews";
 import { Award, Check, FileText, ShieldCheck, Users } from "lucide-react";
 import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
@@ -15,15 +15,14 @@ export const metadata: Metadata = {
 };
 
 export default function MethodologyPage() {
-  const { author, editor, factChecker } = TUCSON_EDITORIAL_CREDITS;
+  const { author, editor, factChecker } = DALLAS_EDITORIAL_CREDITS;
   const article = generateArticleSchema({
     headline: "How rizehvac ranks HVAC contractors",
     description: "Our methodology, made visible: 8 weighted criteria, 14 data sources, NATE-certified fact-checker, no paid placements.",
     pageUrl: "/methodology",
     authors: [
-      { name: author.name, slug: "jordan-marshall" },
+      { name: author.name, slug: "aaron-whittaker" },
       { name: editor.name, slug: "lena-park" },
-      { name: factChecker.name, slug: "carlos-mendoza" },
     ],
   });
   const breadcrumb = generateBreadcrumbSchema([
@@ -57,7 +56,7 @@ export default function MethodologyPage() {
 
           <div className="grid md:grid-cols-3 gap-4 mt-8">
             {[
-              { label: "Step 1", h: "All licensed contractors", body: "We start with every active state-licensed HVAC contractor in the metro. For Tucson that's 142 active AZ ROC licensees in Pima County. For Phoenix it's ~300+. We don't accept self-submissions or contractor applications." },
+              { label: "Step 1", h: "All licensed contractors", body: "We start with every active state-licensed HVAC contractor in the metro. For Dallas that's 142+ active TDLR licensees across Dallas, Tarrant, Collin, and Denton counties. We don't accept self-submissions or contractor applications." },
               { label: "Step 2", h: "Eligibility filter", body: "We narrow to contractors with verifiable BBB filings, NATE certification on at least one technician, no pending state-licensing complaints, and a minimum of 5 years in business. This typically drops the list by ~60%." },
               { label: "Step 3", h: "Weighted scoring", body: "We apply 8 weighted criteria (below). Each contractor gets a 0–100 score. The top 10 by score make the list. Contractors within 2 points of the cutoff get a manual review." },
             ].map((s) => (
@@ -82,7 +81,7 @@ export default function MethodologyPage() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-x-8 gap-y-3">
-            {TUCSON_METHODOLOGY_CRITERIA.map((c) => (
+            {DALLAS_METHODOLOGY_CRITERIA.map((c) => (
               <div key={c.label} className="flex items-center gap-3 py-3 border-b" style={{ borderColor: "var(--brand-border)" }}>
                 <div className="grid place-items-center rounded-md shrink-0" style={{ width: 36, height: 36, background: "var(--brand-cta)" }}>
                   <Check size={18} style={{ color: "var(--brand-cta-fg)" }} strokeWidth={2.5} />
@@ -104,14 +103,14 @@ export default function MethodologyPage() {
 
           <div className="grid sm:grid-cols-2 gap-3">
             {([
-              { label: "State contractor licensing database (per state)", url: "https://roc.az.gov/contractor-search" },
+              { label: "State contractor licensing database (per state)", url: "https://www.tdlr.texas.gov/license/lic-search/" },
               { label: "BBB regional reports + complaint history", url: "https://www.bbb.org" },
               { label: "EPA refrigerant handler registry (Section 608)", url: "https://www.epa.gov/section608" },
               { label: "NATE certification roster (national)", url: "https://www.natex.org" },
               { label: "ACCA contractor membership directory", url: "https://www.acca.org" },
               { label: "Energy Star Most Efficient Partner list", url: "https://www.energystar.gov" },
               { label: "Lennox / Trane / Carrier / Goodman dealer locators", url: "https://www.lennox.com/dealers/dealer-locator" },
-              { label: "County permit issuance records (3-year window)", url: "https://www.pima.gov/280/Permit-Records" },
+              { label: "County permit issuance records (3-year window)", url: "https://www.dallascityhall.com/departments/sustainabledevelopment/buildinginspection" },
               { label: "Google Business Profile reviews + photos", url: "https://www.google.com/business/" },
               { label: "Yelp business profiles (cross-reference only)", url: "https://www.yelp.com" },
               { label: "HomeAdvisor verified review feeds", url: "https://www.homeadvisor.com" },
@@ -141,9 +140,9 @@ export default function MethodologyPage() {
 
           <div className="grid md:grid-cols-3 gap-5">
             {[
-              { p: TUCSON_EDITORIAL_CREDITS.author, role: "Author", icon: Users },
-              { p: TUCSON_EDITORIAL_CREDITS.editor, role: "Editor", icon: ShieldCheck },
-              { p: TUCSON_EDITORIAL_CREDITS.factChecker, role: "Fact-checker", icon: Award },
+              { p: DALLAS_EDITORIAL_CREDITS.author, role: "Author", icon: Users },
+              { p: DALLAS_EDITORIAL_CREDITS.editor, role: "Editor", icon: ShieldCheck },
+              { p: DALLAS_EDITORIAL_CREDITS.factChecker, role: "Fact-checker", icon: Award },
             ].map(({ p, role, icon: Icon }) => (
               <div key={p.name} className="rounded-xl p-6 border" style={{ borderColor: "var(--brand-border)", background: "var(--brand-bg)" }}>
                 <Icon size={22} style={{ color: "var(--brand-cta)" }} />

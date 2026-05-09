@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { V2EditorialPage } from "@/components/v2/V2EditorialPage";
 import { getCity, listCitySlugs } from "@/data/cityRegistry";
+import { isCityNoindex } from "@/data/cityIndexability";
 import {
   generateBreadcrumbSchema,
   generateFAQPageSchema,
@@ -21,12 +22,14 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!city) return {};
   const title = `Best HVAC contractors in ${city.meta.city}, ${city.meta.stateAbbr}`;
   const description = `${city.meta.totalContractorsResearched} ${city.meta.city} HVAC contractors reviewed, ${city.contractors.length} recommended. Real reviews, transparent pricing, NATE-certified. Updated ${city.meta.lastResearched}.`;
+  const noindex = isCityNoindex(slug);
   return {
     title,
     description,
     alternates: { canonical: `/hvac/${slug}` },
     openGraph: { title, description, url: `/hvac/${slug}`, type: "article" },
     twitter: { card: "summary_large_image", title, description },
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
   };
 }
 

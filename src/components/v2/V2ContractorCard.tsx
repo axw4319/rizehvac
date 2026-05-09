@@ -1,5 +1,5 @@
 import { ArrowRight, Award, Clock, Phone, ShieldCheck, ThumbsDown, ThumbsUp } from "lucide-react";
-import { type Contractor } from "@/data/tucson-contractors";
+import { type Contractor } from "@/data/types";
 import { StarRating } from "@/components/shared/StarRating";
 
 export function V2ContractorCard({ contractor }: { contractor: Contractor }) {

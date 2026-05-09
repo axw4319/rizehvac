@@ -1,10 +1,15 @@
 import type { CityData } from "./types";
-import { TUCSON_CITY } from "./tucson";
+import { DALLAS_CITY } from "./dallas";
 
-// Each city's CityData export. Add entries here as Agent 1 lands them.
-// Until each city's data file exists, only Tucson is publishable.
+// Registered (live, indexable) cities. As Aaron + agents land verified data
+// for new cities, add them here one at a time per the waves rollout rule
+// (feedback_helpful_content_waves_rollout.md).
+//
+// The /hvac/[city] dynamic route's generateStaticParams reads from this
+// registry, and so does sitemap.ts — unregistered cities don't get crawl
+// surface area.
 const REGISTRY: Record<string, CityData> = {
-  tucson: TUCSON_CITY,
+  dallas: DALLAS_CITY,
 };
 
 export function listCitySlugs(): string[] {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CostGuidePage } from "@/components/v2/CostGuidePage";
 import { getCity, listCitySlugs } from "@/data/cityRegistry";
+import { isCityNoindex } from "@/data/cityIndexability";
 import {
   generateBreadcrumbSchema,
   generateFAQPageSchema,
@@ -19,11 +20,13 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!city) return {};
   const title = `HVAC cost in ${city.meta.city}, ${city.meta.stateAbbr}: 2026 prices and rebates`;
   const description = `Real ${city.meta.city} HVAC pricing benchmarks, ${city.rebates.length} stackable rebate programs, and what's worth paying for. Updated quarterly.`;
+  const noindex = isCityNoindex(slug);
   return {
     title,
     description,
     alternates: { canonical: `/hvac-cost/${slug}` },
     openGraph: { title, description, url: `/hvac-cost/${slug}`, type: "article" },
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
   };
 }
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ServiceCityPage } from "@/components/v2/ServiceCityPage";
 import { getCity, listCitySlugs } from "@/data/cityRegistry";
+import { isCityNoindex } from "@/data/cityIndexability";
 import {
   generateBreadcrumbSchema,
   generateFAQPageSchema,
@@ -20,11 +21,13 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!city) return {};
   const title = `AC repair in ${city.meta.city}, ${city.meta.stateAbbr}: top 5 same-day specialists`;
   const description = `Same-day AC repair in ${city.meta.city}. Top 5 NATE-certified contractors ranked by speed, transparency, and repair specialization. ${city.meta.totalContractorsResearched} researched.`;
+  const noindex = isCityNoindex(slug);
   return {
     title,
     description,
     alternates: { canonical: `/ac-repair/${slug}` },
     openGraph: { title, description, url: `/ac-repair/${slug}`, type: "article" },
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
