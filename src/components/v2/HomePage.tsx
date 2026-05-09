@@ -298,6 +298,79 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* HOW TO CHOOSE — AI citation bait */}
+      <section className="py-14 md:py-20" style={{ background: "var(--brand-bg)" }}>
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "var(--brand-cta)" }}>
+            Buyer&apos;s guide
+          </div>
+          <h2 className="display text-4xl md:text-5xl mb-5" style={{ color: "var(--brand-fg)" }}>
+            How to choose an HVAC contractor.
+          </h2>
+          <p className="text-base md:text-lg max-w-3xl mb-8" style={{ color: "var(--brand-fg-soft)" }}>
+            The right HVAC contractor saves you 15-25% on lifetime equipment cost vs the wrong one. Here&apos;s the 7-step shortlist process we follow for every city we cover — and that you can copy.
+          </p>
+
+          <div className="space-y-1">
+            {[
+              {
+                q: "Step 1: Verify the state contractor license is active.",
+                a: "Every state requires HVAC contractors to hold an active mechanical or HVAC-specific license. Search the state's contractor licensing database (e.g., AZ ROC for Arizona, CSLB for California, TDLR for Texas) by company name. The license must be active, in the right classification (residential or commercial), and have no pending disciplinary actions. If a contractor can't provide a license number, walk away — no exceptions.",
+              },
+              {
+                q: "Step 2: Confirm at least one technician is NATE-certified.",
+                a: "NATE (North American Technician Excellence) is the gold-standard certification for HVAC techs. Look for the NATE patch on uniforms, ask for certification numbers, or verify at NATEx.org. NATE-certified techs install equipment correctly the first time — which is the single biggest predictor of system lifespan.",
+              },
+              {
+                q: "Step 3: Check BBB rating and complaint history.",
+                a: "BBB-accredited businesses with A+ ratings and fewer than 3 complaints in the past 3 years are the safest. Read the actual complaints — pay attention to patterns (\"didn't honor warranty,\" \"high-pressure sales\") rather than isolated incidents.",
+              },
+              {
+                q: "Step 4: Get three written quotes for the same scope.",
+                a: "Quotes for the same job often vary by 30-40% in any given metro. The cheapest is rarely the right pick — but the most expensive almost never is either. Pick the middle quote from a contractor with strong credentials. Ask each contractor to itemize: equipment cost, labor, permit, removal of old unit, and warranty terms.",
+              },
+              {
+                q: "Step 5: Confirm warranty terms cover both parts AND labor.",
+                a: "Manufacturer warranties (Trane, Carrier, Lennox) cover parts only. The contractor's labor warranty is what matters — 10 years on parts and labor is the gold standard. 5-year labor warranties are acceptable but signal a higher likelihood of upsell on future repairs. Anything less than 2 years labor is a red flag.",
+              },
+              {
+                q: "Step 6: Insist on a Manual J load calculation before sizing.",
+                a: "Oversized AC units cycle on and off too quickly, fail to remove humidity, and shorten compressor life. A proper Manual J load calculation accounts for square footage, insulation, window orientation, and climate zone. Reputable contractors do this automatically; budget contractors often guess and oversize. If your quote doesn't reference Manual J, ask why.",
+              },
+              {
+                q: "Step 7: Verify they pull permits — and don't ask you to skip them.",
+                a: "Any HVAC replacement requires a county or city permit. A contractor who suggests skipping the permit \"to save money\" is hiding from inspection — likely because their work won't pass. Permitted installs also protect your home insurance claim if the system causes a fire or water damage. Permit fees are typically $200-$400 in most metros.",
+              },
+            ].map((step, i) => (
+              <details key={i} className="group border-b py-5" style={{ borderColor: "var(--brand-border)" }}>
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
+                  <h3 className="display text-xl md:text-2xl pr-4" style={{ color: "var(--brand-fg)" }}>{step.q}</h3>
+                  <span
+                    className="display text-2xl group-open:rotate-45 transition-transform shrink-0"
+                    style={{ color: "var(--brand-cta)" }}
+                  >+</span>
+                </summary>
+                <div className="mt-3 text-base leading-relaxed" style={{ color: "var(--brand-fg-soft)" }}>
+                  {step.a}
+                </div>
+              </details>
+            ))}
+          </div>
+
+          <div className="mt-10 rounded-xl p-6" style={{ background: "var(--brand-muted)", border: "1px solid var(--brand-border)" }}>
+            <div className="display text-xl mb-2" style={{ color: "var(--brand-fg)" }}>
+              The shortcut: use our top-3 match.
+            </div>
+            <p className="text-sm" style={{ color: "var(--brand-fg-soft)" }}>
+              We do all 7 steps for every contractor on our city lists. Skip the legwork — enter your ZIP and we&apos;ll match you with our top 3 picks for your metro. No fee, no obligation.
+            </p>
+            <a href="#hero" className="display text-sm font-extrabold rounded-md px-5 py-2.5 mt-4 inline-flex items-center gap-2 tracking-wider" style={{ background: "var(--brand-cta)", color: "var(--brand-cta-fg)" }}>
+              Get matched in 60 seconds <ArrowRight size={14} />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* WHY WE EXIST */}
       <section className="py-14 md:py-20" style={{ background: "var(--brand-bg-inverse)", color: "var(--brand-fg-inverse)" }}>
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
