@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { CITIES } from "@/data/_cities";
+import { listCitySlugs } from "@/data/cityRegistry";
 import { listAuthorSlugs } from "@/data/authors";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rizehvac.com";
@@ -23,7 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  const cityRoutes: MetadataRoute.Sitemap = CITIES.flatMap((city) => [
+  // Only emit URLs for cities that are actually registered (live data).
+  // Coming-soon cities are excluded from the sitemap until their data lands —
+  // listing them would surface 404s to crawlers and trip Helpful Content System
+  // signals (scaled-content / thin-content flags).
+  const cityRoutes: MetadataRoute.Sitemap = listCitySlugs().flatMap((city) => [
     { url: `${SITE_URL}/hvac/${city}`, lastModified, changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${SITE_URL}/ac-repair/${city}`, lastModified, changeFrequency: "weekly" as const, priority: 0.8 },
     { url: `${SITE_URL}/hvac-cost/${city}`, lastModified, changeFrequency: "monthly" as const, priority: 0.7 },
