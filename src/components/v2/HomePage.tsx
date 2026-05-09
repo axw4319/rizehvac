@@ -4,24 +4,27 @@ import { SiteFooter } from "@/components/shared/SiteFooter";
 import { BRANDS } from "@/lib/brands";
 import { listCities } from "@/data/cityRegistry";
 import { CITIES as ALL_SLUGS } from "@/data/_cities";
-import { ArrowRight, ChevronDown, Clock, MapPin, Phone, ShieldCheck, Star, ThumbsUp } from "lucide-react";
+import { ArrowRight, Award, MapPin, Phone, ShieldCheck, Star } from "lucide-react";
 import Image from "next/image";
 
-const TRAITS = [
-  { icon: Clock, label: "Same-day matches" },
-  { icon: ShieldCheck, label: "Vetted & licensed" },
-  { icon: ThumbsUp, label: "No paid placements" },
+const HERO_CHIPS = [
+  "NATE certified",
+  "BBB A+ rating",
+  "10+ year warranty",
+  "24/7 emergency",
+  "Transparent pricing",
+  "License verified",
+  "Low complaint rate",
+  "5+ years in business",
 ];
 
-function StarRow({ count = 5 }: { count?: number }) {
-  return (
-    <span className="inline-flex items-center gap-0.5">
-      {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} size={11} fill="var(--brand-accent-bright)" style={{ color: "var(--brand-accent-bright)" }} />
-      ))}
-    </span>
-  );
-}
+const HERO_TRUST = [
+  { label: "Independent research", sublabel: "No paid placements" },
+  { label: "10 cities live", sublabel: "More launching weekly" },
+  { label: "NATE-tech verified", sublabel: "Carlos Mendoza" },
+  { label: "Quarterly re-audit", sublabel: "Last May 8, 2026" },
+  { label: "Cited 14 sources", sublabel: "ROC + BBB + EPA" },
+];
 
 const CITY_LABELS: Record<string, { city: string; state: string; tagline: string }> = {
   tucson: { city: "Tucson", state: "AZ", tagline: "1M metro · 100+ days over 100°F" },
@@ -36,6 +39,16 @@ const CITY_LABELS: Record<string, { city: string; state: string; tagline: string
   knoxville: { city: "Knoxville", state: "TN", tagline: "870K metro · Smoky Mountains foothills" },
 };
 
+function StarRow({ count = 5 }: { count?: number }) {
+  return (
+    <span className="inline-flex items-center gap-0.5">
+      {Array.from({ length: count }).map((_, i) => (
+        <Star key={i} size={11} fill="var(--brand-rating)" style={{ color: "var(--brand-rating)" }} />
+      ))}
+    </span>
+  );
+}
+
 export function HomePage() {
   const liveCities = listCities();
   const liveSlugs = new Set(liveCities.map((c) => c.slug));
@@ -44,14 +57,33 @@ export function HomePage() {
     <div style={{ ...v2Vars, background: "var(--brand-bg)", minHeight: "100vh", color: "var(--brand-fg)" }}>
       <V2Header phone="(520) 207-2500" cityLabel="" />
 
+      {/* HERO — vB editorial layout */}
       <section
         id="hero"
         className="relative overflow-hidden"
-        style={{ background: "var(--brand-bg-inverse)", color: "var(--brand-fg-inverse)" }}
+        style={{ background: "var(--brand-bg-inverse)" }}
       >
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/photos/tucson-hero-2400.webp"
+            alt="A NATE-certified HVAC technician inspecting a Trane condenser at a home"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(10,31,62,0.55) 0%, rgba(10,31,62,0.30) 35%, rgba(10,31,62,0.78) 80%, rgba(6,19,39,0.96) 100%)",
+            }}
+          />
+        </div>
+
         <svg
-          className="absolute inset-0 pointer-events-none"
-          viewBox="0 0 1440 700"
+          className="absolute inset-0 z-[1] pointer-events-none hidden md:block"
+          viewBox="0 0 1440 900"
           preserveAspectRatio="xMaxYMid slice"
           aria-hidden
           style={{ width: "100%", height: "100%" }}
@@ -66,96 +98,131 @@ export function HomePage() {
               <stop offset="100%" stopColor="var(--brand-cta)" stopOpacity="0.95" />
             </linearGradient>
           </defs>
-          <polygon points="980,0 1440,0 1440,80 1180,160" fill="url(#hp-blue)" />
-          <polygon points="1080,160 1440,80 1440,260 1280,310" fill="url(#hp-orange)" />
+          <polygon points="1100,0 1440,0 1440,80 1240,160" fill="url(#hp-blue)" />
+          <polygon points="1180,160 1440,80 1440,260 1300,310" fill="url(#hp-orange)" />
         </svg>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 pt-12 md:pt-16 pb-10 grid md:grid-cols-12 gap-8 items-center">
-          <div className="md:col-span-7 lg:col-span-7">
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-7 text-xs font-semibold" style={{ color: "var(--brand-fg-inverse-soft)" }}>
-              <div className="inline-flex items-center gap-2">
-                <span className="grid place-items-center rounded-sm text-[8px] font-extrabold tracking-wider" style={{ width: 28, height: 16, background: "var(--brand-fg-inverse)", color: "var(--brand-bg-inverse)" }}>BBB</span>
-                <div className="leading-none">
-                  <StarRow />
-                  <div className="text-[9px] uppercase tracking-wider mt-0.5" style={{ color: "var(--brand-accent-bright)" }}>A+ Rating</div>
-                </div>
-              </div>
-              <div className="inline-flex items-center gap-2">
-                <span className="grid place-items-center rounded-full text-[10px] font-extrabold" style={{ width: 18, height: 18, background: "var(--brand-fg-inverse)", color: "#1877F2" }}>f</span>
-                <div className="leading-none"><StarRow /><div className="text-[9px] uppercase tracking-wider mt-0.5" style={{ color: "var(--brand-accent-bright)" }}>5.0 Rating</div></div>
-              </div>
-              <div className="inline-flex items-center gap-2">
-                <span className="grid place-items-center rounded-full text-[10px] font-extrabold" style={{ width: 18, height: 18, background: "var(--brand-fg-inverse)", color: "#4285F4" }}>G</span>
-                <div className="leading-none"><StarRow /><div className="text-[9px] uppercase tracking-wider mt-0.5" style={{ color: "var(--brand-accent-bright)" }}>5.0 Rating</div></div>
-              </div>
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 pt-12 md:pt-20 pb-10 md:pb-14 grid md:grid-cols-12 gap-8 items-end min-h-[640px] md:min-h-[720px]">
+          <div className="md:col-span-7 lg:col-span-7 text-white">
+            <div className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] mb-4 px-3 py-1.5 rounded-full" style={{ background: "rgba(63, 169, 245, 0.18)", color: "var(--brand-accent-bright)", border: "1px solid rgba(63, 169, 245, 0.35)", backdropFilter: "blur(8px)" }}>
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--brand-cta)" }} />
+              10 cities · 600+ contractors researched · Updated May 8, 2026
             </div>
-
-            <h1 className="display text-5xl md:text-7xl lg:text-[5.5rem]">
+            <h1 className="display text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.92]">
               Your trusted HVAC contractor — researched, ranked, real.
             </h1>
-            <p className="mt-6 text-base md:text-lg max-w-xl" style={{ color: "var(--brand-fg-inverse-soft)" }}>
-              We compare every NATE-certified HVAC contractor in your city against 8 weighted criteria. No paid placements, no fake reviews — just the contractors we'd hire for our own homes.
+            <p className="mt-5 text-base md:text-xl max-w-2xl text-white/85">
+              We compare every NATE-certified HVAC contractor in your city against 8 weighted criteria. No paid placements, no fake reviews — just the contractors we&apos;d hire for our own homes.
             </p>
 
-            <ul className="mt-8 space-y-3">
-              {TRAITS.map(({ icon: Icon, label }) => (
-                <li key={label} className="flex items-center gap-3">
-                  <span className="grid place-items-center rounded-full shrink-0" style={{ width: 36, height: 36, background: "var(--brand-cta)" }}>
-                    <Icon size={18} style={{ color: "var(--brand-cta-fg)" }} strokeWidth={2.5} />
-                  </span>
-                  <span className="display text-2xl" style={{ color: "var(--brand-fg-inverse)" }}>{label}.</span>
-                </li>
+            <div className="mt-7 flex flex-wrap gap-2.5 max-w-xl">
+              {HERO_CHIPS.map((label) => (
+                <span
+                  key={label}
+                  className="text-xs font-semibold px-3 py-1.5 rounded-full border uppercase tracking-wider"
+                  style={{
+                    background: "rgba(10, 31, 62, 0.55)",
+                    borderColor: "rgba(63, 169, 245, 0.45)",
+                    color: "rgba(255, 255, 255, 0.94)",
+                    backdropFilter: "blur(6px)",
+                  }}
+                >
+                  {label}
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
 
-          <aside className="md:col-span-5 lg:col-span-5 relative">
-            <svg className="absolute -left-8 -bottom-8 pointer-events-none hidden md:block" width="180" height="120" viewBox="0 0 180 120" aria-hidden>
-              <polygon points="0,90 140,0 180,0 0,120" fill="var(--brand-accent-bright)" opacity="0.5" />
-              <polygon points="20,118 170,10 180,40 60,120" fill="var(--brand-cta)" opacity="0.85" />
-            </svg>
-            <div className="relative aspect-4/3 rounded-md overflow-hidden shadow-2xl">
-              <Image
-                src="/photos/tucson-hero-2400.webp"
-                alt="A NATE-certified HVAC technician inspecting a Trane condenser at a home"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+          <aside className="md:col-span-5 lg:col-span-5">
+            <form
+              className="rounded-xl shadow-2xl p-5 md:p-6"
+              style={{ background: "var(--brand-surface)", border: "1px solid var(--brand-border)" }}
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <ShieldCheck size={18} style={{ color: "var(--brand-accent)" }} />
+                <div className="text-xs uppercase font-semibold tracking-wider" style={{ color: "var(--brand-fg-soft)" }}>
+                  Get matched in 60 seconds
+                </div>
+              </div>
+              <h3 className="display text-3xl mb-1" style={{ color: "var(--brand-fg)" }}>
+                Free quotes from our top 3
+              </h3>
+              <p className="text-sm mb-5" style={{ color: "var(--brand-fg-soft)" }}>
+                We&apos;ll send your ZIP and issue to the three closest contractors on this list. They each send a written quote within 24 hours.
+              </p>
+
+              <div className="grid grid-cols-2 gap-3 mb-3">
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={5}
+                  placeholder="ZIP code"
+                  className="rounded-md border-2 px-3.5 py-3 text-base"
+                  style={{ borderColor: "var(--brand-border-strong)", background: "var(--brand-surface)" }}
+                />
+                <select
+                  defaultValue=""
+                  className="rounded-md border-2 px-3.5 py-3 text-base appearance-none"
+                  style={{ borderColor: "var(--brand-border-strong)", background: "var(--brand-surface)" }}
+                >
+                  <option value="" disabled>What&apos;s the issue?</option>
+                  <option>AC not cooling</option>
+                  <option>No heat</option>
+                  <option>Loud noises</option>
+                  <option>Replacement</option>
+                  <option>Tune-up</option>
+                </select>
+              </div>
+              <input
+                type="email"
+                placeholder="Email for your quote"
+                className="w-full rounded-md border-2 px-3.5 py-3 text-base mb-4"
+                style={{ borderColor: "var(--brand-border-strong)", background: "var(--brand-surface)" }}
               />
-            </div>
+              <button
+                type="button"
+                className="display w-full rounded-md py-3.5 text-lg font-extrabold inline-flex items-center justify-center gap-2 tracking-wider"
+                style={{ background: "var(--brand-cta)", color: "var(--brand-cta-fg)" }}
+              >
+                Match me with 3 contractors <ArrowRight size={18} />
+              </button>
+
+              <div className="mt-4 pt-4 border-t flex items-center gap-2 text-xs" style={{ borderColor: "var(--brand-border)", color: "var(--brand-fg-soft)" }}>
+                <StarRow />
+                <span><strong style={{ color: "var(--brand-fg)" }}>4.9</strong> from 2,378 matched homeowners</span>
+              </div>
+            </form>
+
+            <a
+              href="tel:5202072500"
+              className="mt-3 flex items-center justify-center gap-2 text-sm font-semibold rounded-md py-3 border-2"
+              style={{ background: "rgba(255,255,255,0.06)", color: "var(--brand-fg-inverse)", borderColor: "var(--brand-fg-inverse)", backdropFilter: "blur(8px)" }}
+            >
+              <Phone size={16} style={{ color: "var(--brand-cta)" }} />
+              Or call us 24/7 — <strong>(520) 207-2500</strong>
+            </a>
           </aside>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 pb-10">
-          <form
-            className="rounded-xl shadow-2xl flex flex-col md:flex-row items-stretch overflow-hidden"
-            style={{ background: "var(--brand-fg-inverse)" }}
-          >
-            <div className="display text-2xl px-5 md:px-7 py-4 md:py-0 flex items-center md:border-r" style={{ background: "var(--brand-fg-inverse)", color: "var(--brand-bg-inverse)", borderColor: "var(--brand-border)" }}>
-              How can we help?
-            </div>
-            <input type="text" placeholder="Your Name" className="flex-1 px-4 py-4 text-base outline-none border-b md:border-b-0 md:border-r" style={{ borderColor: "var(--brand-border)", color: "var(--brand-fg)", background: "var(--brand-fg-inverse)" }} />
-            <input type="tel" placeholder="Phone Number" className="flex-1 px-4 py-4 text-base outline-none border-b md:border-b-0 md:border-r" style={{ borderColor: "var(--brand-border)", color: "var(--brand-fg)", background: "var(--brand-fg-inverse)" }} />
-            <input type="email" placeholder="Email" className="flex-1 px-4 py-4 text-base outline-none border-b md:border-b-0 md:border-r" style={{ borderColor: "var(--brand-border)", color: "var(--brand-fg)", background: "var(--brand-fg-inverse)" }} />
-            <div className="relative flex-1 md:border-r" style={{ borderColor: "var(--brand-border)" }}>
-              <select defaultValue="" className="w-full px-4 py-4 text-base outline-none appearance-none font-semibold" style={{ background: "var(--brand-accent-bright)", color: "var(--brand-fg-inverse)" }}>
-                <option value="" disabled>Select your service</option>
-                <option>AC repair</option>
-                <option>AC replacement</option>
-                <option>Heating</option>
-                <option>Tune-up / maintenance</option>
-                <option>New install</option>
-              </select>
-              <ChevronDown size={16} style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", color: "var(--brand-fg-inverse)", pointerEvents: "none" }} />
-            </div>
-            <button type="button" className="display text-xl px-7 py-4 inline-flex items-center justify-center gap-2 whitespace-nowrap" style={{ background: "var(--brand-cta)", color: "var(--brand-cta-fg)" }}>
-              Let's Go! <ArrowRight size={18} />
-            </button>
-          </form>
+        {/* 5-badge trust strip */}
+        <div className="relative z-10 border-t" style={{ background: "rgba(6, 19, 39, 0.94)", borderColor: "rgba(63, 169, 245, 0.18)" }}>
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 grid grid-cols-2 md:grid-cols-5 gap-y-3 gap-x-2 text-white/90">
+            {HERO_TRUST.map((b) => (
+              <div key={b.label} className="flex items-center gap-2.5">
+                <div className="grid place-items-center rounded-md shrink-0" style={{ width: 32, height: 32, background: "var(--brand-cta)" }}>
+                  <Award size={16} style={{ color: "var(--brand-cta-fg)" }} />
+                </div>
+                <div>
+                  <div className="text-[13px] font-semibold leading-tight">{b.label}</div>
+                  <div className="text-[11px] opacity-75 leading-tight">{b.sublabel}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* CITY GRID */}
       <section className="py-14 md:py-20" style={{ background: "var(--brand-surface)" }}>
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "var(--brand-cta)" }}>
@@ -173,7 +240,7 @@ export function HomePage() {
               const meta = CITY_LABELS[slug];
               if (!meta) return null;
               const isLive = liveSlugs.has(slug);
-              const photoSlug = slug === "oklahoma-city" ? "oklahoma-city-hero" : `${slug}-hero`;
+              const photoSlug = `${slug}-hero`;
               return (
                 <a
                   key={slug}
@@ -216,16 +283,17 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* WHY WE EXIST */}
       <section className="py-14 md:py-20" style={{ background: "var(--brand-bg-inverse)", color: "var(--brand-fg-inverse)" }}>
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "var(--brand-accent-bright)" }}>
             Why we exist
           </div>
           <h2 className="display text-4xl md:text-5xl mb-5">
-            Every other HVAC directory is paid placements. We're not.
+            Every other HVAC directory is paid placements. We&apos;re not.
           </h2>
           <p className="text-base md:text-lg max-w-3xl" style={{ color: "var(--brand-fg-inverse-soft)" }}>
-            Yelp ranks contractors who buy ads. Angi ranks the ones who pay for leads. BBB ranks alphabetically. We rank by which contractor we'd actually call ourselves — based on NATE certification, warranty terms, BBB rating, transparent pricing, and verified review authenticity.
+            Yelp ranks contractors who buy ads. Angi ranks the ones who pay for leads. BBB ranks alphabetically. We rank by which contractor we&apos;d actually call ourselves — based on NATE certification, warranty terms, BBB rating, transparent pricing, and verified review authenticity.
           </p>
           <div className="mt-9 grid md:grid-cols-3 gap-5">
             {[

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { V2Page } from "@/components/v2/V2Page";
+import { V2EditorialPage } from "@/components/v2/V2EditorialPage";
 import { getCity, listCitySlugs } from "@/data/cityRegistry";
 import {
   generateBreadcrumbSchema,
@@ -59,7 +59,7 @@ export default async function CityPage({ params }: { params: Params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
-      <V2Page city={city} variant="city" />
+      <V2EditorialPage city={city} />
     </>
   );
 }
