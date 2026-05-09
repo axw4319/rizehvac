@@ -1,6 +1,8 @@
 import { ArrowUpDown, Check, X } from "lucide-react";
 import { StarRating } from "@/components/shared/StarRating";
 import type { CityData } from "@/data/types";
+import { computeRizeScore } from "@/lib/rizescore";
+import { RizeScoreInline } from "./RizeScoreBadge";
 
 export function ComparisonTable({ city }: { city: CityData }) {
   return (
@@ -18,11 +20,11 @@ export function ComparisonTable({ city }: { city: CityData }) {
           <table className="w-full text-sm" style={{ minWidth: 920 }}>
             <thead style={{ background: "var(--brand-muted)" }}>
               <tr>
-                {["Rank", "Contractor", "Overall", "NATE", "24/7", "Warranty", "Avg quote", ""].map((h, i) => (
+                {["Rank", "Contractor", "RizeScore™", "Reviews", "NATE", "24/7", "Warranty", "$$", ""].map((h, i) => (
                   <th
                     scope="col"
                     key={h + i}
-                    className={`text-${i >= 3 && i <= 6 ? "center" : i === 7 ? "right" : "left"} px-3 py-3 font-semibold text-xs uppercase tracking-wider`}
+                    className={`text-${i >= 4 && i <= 7 ? "center" : i === 8 ? "right" : "left"} px-3 py-3 font-semibold text-xs uppercase tracking-wider`}
                     style={{ color: "var(--brand-mutedFg, #5A5447)", whiteSpace: "nowrap" }}
                   >
                     {h}
@@ -56,11 +58,14 @@ export function ComparisonTable({ city }: { city: CityData }) {
                     <div className="text-xs mt-0.5" style={{ color: "var(--brand-fg-soft)" }}>{c.bestFor}</div>
                   </td>
                   <td className="px-3 py-3">
+                    <RizeScoreInline score={computeRizeScore(c)} />
+                  </td>
+                  <td className="px-3 py-3">
                     <div className="inline-flex items-center gap-1.5 whitespace-nowrap">
                       <StarRating rating={c.rating} size={12} />
                       <span className="font-semibold tabular-nums">{c.rating.toFixed(1)}</span>
                     </div>
-                    <div className="text-xs mt-0.5" style={{ color: "var(--brand-fg-soft)" }}>{c.reviewCount.toLocaleString()} reviews</div>
+                    <div className="text-xs mt-0.5" style={{ color: "var(--brand-fg-soft)" }}>{c.reviewCount.toLocaleString()}</div>
                   </td>
                   <td className="px-3 py-3 text-center">
                     <Check size={18} className="mx-auto" style={{ color: "var(--brand-success)" }} />

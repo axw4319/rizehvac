@@ -1,9 +1,12 @@
 import { ArrowRight, Award, Clock, Phone, ShieldCheck, ThumbsDown, ThumbsUp } from "lucide-react";
 import { type Contractor } from "@/data/types";
 import { StarRating } from "@/components/shared/StarRating";
+import { computeRizeScore } from "@/lib/rizescore";
+import { RizeScoreBadge } from "./RizeScoreBadge";
 
 export function V2ContractorCard({ contractor }: { contractor: Contractor }) {
   const c = contractor;
+  const rizeScore = computeRizeScore(c);
   return (
     <article
       id={`rank-${c.rank}`}
@@ -12,23 +15,35 @@ export function V2ContractorCard({ contractor }: { contractor: Contractor }) {
     >
       <div className="p-5 md:p-6">
         <div className="flex items-start gap-5">
-          <div
-            className="grid place-items-center heading text-2xl font-semibold shrink-0"
-            style={{
-              width: 56,
-              height: 56,
-              background: c.rank === 1 ? "var(--brand-accent)" : "var(--brand-muted)",
-              color: c.rank === 1 ? "var(--brand-accent-fg)" : "var(--brand-accent)",
-              borderRadius: "0.625rem",
-            }}
-          >
-            {c.rank}
+          <div className="flex flex-col items-center gap-2 shrink-0">
+            <div
+              className="grid place-items-center heading text-2xl font-semibold"
+              style={{
+                width: 56,
+                height: 56,
+                background: c.rank === 1 ? "var(--brand-accent)" : "var(--brand-muted)",
+                color: c.rank === 1 ? "var(--brand-accent-fg)" : "var(--brand-accent)",
+                borderRadius: "0.625rem",
+              }}
+            >
+              {c.rank}
+            </div>
+            <a
+              href="/what-is-rizescore"
+              className="text-[10px] font-semibold uppercase tracking-wider underline"
+              style={{ color: "var(--brand-fg-soft)" }}
+            >
+              ↑ rank
+            </a>
           </div>
           <div className="flex-1 min-w-0">
-            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <div className="flex flex-wrap items-start justify-between gap-3 mb-1.5">
               <h3 className="heading text-xl md:text-2xl font-semibold" style={{ color: "var(--brand-fg)" }}>
                 {c.name}
               </h3>
+              <RizeScoreBadge score={rizeScore} size="sm" showLabel />
+            </div>
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
               {c.rank === 1 ? (
                 <span
                   className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
