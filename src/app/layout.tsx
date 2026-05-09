@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   description:
     "Find a vetted HVAC contractor in your city. Researched recommendations, real reviews, transparent pricing.",
   applicationName: "rizehvac",
-  // TODO: generate /public/og.png (1200x630). Until then we point at the placeholder.
+  // /public/og.jpg generated via Imagen 4 (Trane condenser + Catalina mountains, 1200x630)
   openGraph: {
     type: "website",
     siteName: "rizehvac",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       "Find a vetted HVAC contractor in your city. Researched recommendations, real reviews, transparent pricing.",
     images: [
       {
-        url: "/og.png",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "rizehvac",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "rizehvac — researched HVAC contractor picks",
     description:
       "Find a vetted HVAC contractor in your city. Researched recommendations, real reviews, transparent pricing.",
-    images: ["/og.png"],
+    images: ["/og.jpg"],
   },
   robots: {
     index: true,
