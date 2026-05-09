@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="80" viewBox="0 0 320 80">
+  <rect width="320" height="80" fill="#0A1F3E"/>
+  <text x="20" y="58" font-family="Barlow Condensed, Inter, sans-serif" font-weight="800" font-size="52" fill="#FFFFFF" letter-spacing="-1">RIZE</text>
+  <polygon points="158,68 178,32 188,46 198,32 218,68" fill="#F97316"/>
+  <polygon points="178,32 188,46 198,32 188,18" fill="#3FA9F5"/>
+  <text x="225" y="58" font-family="Barlow Condensed, Inter, sans-serif" font-weight="800" font-size="52" fill="#F97316" letter-spacing="-1">HVAC</text>
+</svg>
