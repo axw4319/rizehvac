@@ -164,6 +164,33 @@ export function generateFAQPageSchema(
   };
 }
 
+// -- HowTo (for step-by-step guides like buyer's guide + methodology) -------
+
+export type HowToStep = { name: string; text: string };
+
+export function generateHowToSchema(input: {
+  name: string;
+  description: string;
+  pageUrl: string;
+  totalTime?: string; // ISO 8601 duration, e.g. "PT15M"
+  steps: HowToStep[];
+}): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: input.name,
+    description: input.description,
+    url: input.pageUrl.startsWith("http") ? input.pageUrl : `${SITE_URL}${input.pageUrl}`,
+    ...(input.totalTime ? { totalTime: input.totalTime } : {}),
+    step: input.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
 // -- Speakable (voice-search readout for Quick Answer blocks) -------
 
 export function generateSpeakableSchema(pageUrl: string): Record<string, unknown> {

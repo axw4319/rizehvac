@@ -17,9 +17,17 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+# Anthropic — current bot identifiers (2026)
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Legacy Anthropic strings — kept for backward compatibility
 User-agent: Claude-Web
 Allow: /
 

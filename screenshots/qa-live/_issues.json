@@ -1,0 +1,72 @@
+[
+  {
+    "browser": "chromium",
+    "viewport": "iphone14",
+    "consoleErrors": [
+      "[console.error] Failed to load resource: the server responded with a status of 400 ()"
+    ]
+  },
+  {
+    "browser": "chromium",
+    "viewport": "pixel7",
+    "consoleErrors": [
+      "[console.error] Failed to load resource: the server responded with a status of 400 ()"
+    ]
+  },
+  {
+    "browser": "chromium",
+    "viewport": "tablet",
+    "consoleErrors": [
+      "[console.error] Failed to load resource: the server responded with a status of 400 ()"
+    ]
+  },
+  {
+    "browser": "chromium",
+    "viewport": "desktop1440",
+    "consoleErrors": [
+      "[console.error] Failed to load resource: the server responded with a status of 400 ()"
+    ]
+  },
+  {
+    "browser": "chromium",
+    "viewport": "desktop1920",
+    "consoleErrors": [
+      "[console.error] Failed to load resource: the server responded with a status of 400 ()"
+    ]
+  },
+  {
+    "browser": "webkit",
+    "viewport": "iphone14",
+    "consoleErrors": [
+      "[console.error] Failed to load resource: the server responded with a status of 400 ()"
+    ]
+  },
+  {
+    "browser": "webkit",
+    "viewport": "pixel7",
+    "consoleErrors": [
+      "[console.error] Failed to load resource: the server responded with a status of 400 ()"
+    ]
+  },
+  {
+    "browser": "webkit",
+    "viewport": "tablet",
+    "consoleErrors": [
+      "[console.error] Failed to load resource: the server responded with a status of 400 ()"
+    ]
+  },
+  {
+    "browser": "webkit",
+    "viewport": "desktop1440",
+    "consoleErrors": [
+      "[console.error] Failed to load resource: the server responded with a status of 400 ()"
+    ]
+  },
+  {
+    "browser": "webkit",
+    "viewport": "desktop1920",
+    "consoleErrors": [
+      "[console.error] Failed to load resource: the server responded with a status of 400 ()"
+    ]
+  }
+]
