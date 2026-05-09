@@ -1,13 +1,13 @@
 import { ArrowUpDown, Check, X } from "lucide-react";
-import { TUCSON_CONTRACTORS } from "@/data/tucson-contractors";
 import { StarRating } from "@/components/shared/StarRating";
+import type { CityData } from "@/data/types";
 
-export function ComparisonTable() {
+export function ComparisonTable({ city }: { city: CityData }) {
   return (
     <section className="border-b" style={{ background: "var(--brand-surface)", borderColor: "var(--brand-border)" }}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-7">
         <div className="flex flex-wrap items-baseline justify-between gap-3 mb-4">
-          <h2 className="heading text-2xl md:text-3xl">Top 10 Tucson HVAC contractors at a glance</h2>
+          <h2 className="heading text-2xl md:text-3xl">Top {city.contractors.length} {city.meta.city} HVAC contractors at a glance</h2>
           <div className="flex items-center gap-2 text-xs" style={{ color: "var(--brand-fg-soft)" }}>
             <ArrowUpDown size={14} />
             <span>Sortable · Tap a column header</span>
@@ -30,7 +30,7 @@ export function ComparisonTable() {
               </tr>
             </thead>
             <tbody>
-              {TUCSON_CONTRACTORS.map((c, i) => (
+              {city.contractors.map((c, i) => (
                 <tr
                   key={c.rank}
                   className="hover:bg-[var(--brand-muted)] transition-colors"
@@ -52,9 +52,7 @@ export function ComparisonTable() {
                   </td>
                   <td className="px-3 py-3">
                     <div className="font-semibold" style={{ color: "var(--brand-fg)" }}>{c.name}</div>
-                    <div className="text-xs mt-0.5" style={{ color: "var(--brand-fg-soft)" }}>
-                      {c.bestFor}
-                    </div>
+                    <div className="text-xs mt-0.5" style={{ color: "var(--brand-fg-soft)" }}>{c.bestFor}</div>
                   </td>
                   <td className="px-3 py-3">
                     <div className="inline-flex items-center gap-1.5 whitespace-nowrap">
@@ -81,7 +79,7 @@ export function ComparisonTable() {
                   </td>
                   <td className="px-3 py-3 text-right">
                     <a
-                      href="#"
+                      href="#hero"
                       className="inline-flex items-center text-xs font-semibold rounded-md px-3 py-1.5 whitespace-nowrap"
                       style={{ background: "var(--brand-cta)", color: "var(--brand-cta-fg)" }}
                     >
@@ -94,7 +92,7 @@ export function ComparisonTable() {
           </table>
         </div>
         <div className="mt-3 text-xs" style={{ color: "var(--brand-fg-soft)" }}>
-          Data as of May 8, 2026. We re-verify every contractor quarterly via AZ ROC license check, BBB filings, and direct review audit.
+          Data as of {city.meta.lastResearched}. We re-verify every contractor quarterly via state license check, BBB filings, and direct review audit.
         </div>
       </div>
     </section>

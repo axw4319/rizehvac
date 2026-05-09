@@ -1,50 +1,53 @@
-import { Menu, Phone, Wind } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 
-export function V2Header() {
+export function V2Header({ phone, cityLabel }: { phone: string; cityLabel: string }) {
+  const tel = phone.replace(/[^0-9]/g, "");
   return (
     <header
-      className="sticky top-0 z-30 backdrop-blur-md"
-      style={{ background: "rgba(250, 250, 247, 0.92)", borderBottom: "1px solid var(--brand-border)" }}
+      className="sticky top-0 z-30"
+      style={{ background: "var(--brand-bg-inverse, #0A1F3E)", color: "var(--brand-fg-inverse, #ffffff)" }}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
-        <a href="#" className="flex items-center gap-2.5">
-          <span
-            className="grid place-items-center rounded-lg"
-            style={{ background: "var(--brand-accent)", color: "var(--brand-accent-fg)", width: 36, height: 36 }}
-          >
-            <Wind size={18} strokeWidth={2.4} />
+        <a href="/" className="flex items-center gap-2.5">
+          <span className="display text-3xl tracking-tight" style={{ color: "var(--brand-fg-inverse)" }}>
+            RIZE
           </span>
-          <span className="heading text-lg font-semibold tracking-tight">
-            rize<span style={{ color: "var(--brand-accent)" }}>hvac</span>
-          </span>
-          <span className="hidden sm:inline-block text-xs px-2 py-0.5 rounded-full ml-1" style={{ background: "var(--brand-muted)", color: "var(--brand-fg-soft)" }}>
-            Tucson
-          </span>
+          <svg width="22" height="26" viewBox="0 0 22 26" aria-hidden>
+            <polygon points="0,26 8,8 11,14 14,8 22,26" fill="var(--brand-cta)" />
+            <polygon points="8,8 11,14 14,8 11,2" fill="var(--brand-accent-bright)" />
+          </svg>
+          {cityLabel ? (
+            <span className="hidden sm:inline-block text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-sm ml-1" style={{ background: "var(--brand-accent-bright)", color: "var(--brand-bg-inverse)" }}>
+              {cityLabel}
+            </span>
+          ) : null}
         </a>
-        <nav className="hidden md:flex items-center gap-7 text-sm" style={{ color: "var(--brand-fg-soft)" }}>
-          <a href="#" className="hover:opacity-100 opacity-90">Best HVAC</a>
-          <a href="#" className="hover:opacity-100 opacity-90">AC Repair</a>
-          <a href="#" className="hover:opacity-100 opacity-90">Cost Guides</a>
-          <a href="#methodology" className="hover:opacity-100 opacity-90">Methodology</a>
+
+        <nav className="hidden md:flex items-center gap-9 text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--brand-fg-inverse-soft, rgba(255,255,255,0.78))" }}>
+          <a href="/" className="hover:text-white">Services</a>
+          <a href="#methodology" className="hover:text-white">About</a>
+          <a href="/" className="hover:text-white">Cities</a>
+          <a href="/" className="hover:text-white">Blog</a>
         </nav>
+
         <div className="flex items-center gap-3">
           <a
-            href="tel:5202072500"
-            className="hidden md:inline-flex items-center gap-2 text-sm font-semibold"
-            style={{ color: "var(--brand-fg)" }}
+            href={`tel:${tel}`}
+            className="hidden md:inline-flex items-center gap-2 text-sm font-semibold rounded-md px-4 py-2.5"
+            style={{ border: "2px solid var(--brand-fg-inverse)", color: "var(--brand-fg-inverse)" }}
           >
-            <Phone size={16} style={{ color: "var(--brand-cta)" }} />
-            <span className="leading-none">(520) 207-2500</span>
+            <Phone size={15} />
+            {phone}
           </a>
           <a
             href="#hero"
-            className="text-sm font-semibold rounded-lg px-4 py-2"
+            className="display text-sm font-extrabold rounded-md px-5 py-3 tracking-wider whitespace-nowrap"
             style={{ background: "var(--brand-cta)", color: "var(--brand-cta-fg)" }}
           >
-            Get matched
+            Let's Connect
           </a>
           <button type="button" className="md:hidden p-2 -mr-2" aria-label="Menu">
-            <Menu size={22} />
+            <Menu size={22} style={{ color: "var(--brand-fg-inverse)" }} />
           </button>
         </div>
       </div>

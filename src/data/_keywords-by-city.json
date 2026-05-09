@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "source": "Ahrefs keywords-explorer/overview",
+    "country": "us",
+    "pulled": "2026-05-08",
+    "note": "cpc is in cents; divide by 100 for USD."
+  },
+  "phoenix": {
+    "keywords": [
+      { "keyword": "hvac repair phoenix", "volume": 600, "difficulty": 38, "cpc": 3000 },
+      { "keyword": "ac repair phoenix", "volume": 1500, "difficulty": 30, "cpc": 2000 },
+      { "keyword": "hvac contractors phoenix", "volume": 350, "difficulty": 34, "cpc": 600 },
+      { "keyword": "best hvac phoenix", "volume": 0, "difficulty": null, "cpc": null },
+      { "keyword": "hvac phoenix", "volume": 1400, "difficulty": 61, "cpc": 1700 }
+    ]
+  },
+  "albuquerque": {
+    "keywords": [
+      { "keyword": "ac repair albuquerque", "volume": 350, "difficulty": 0, "cpc": 70 },
+      { "keyword": "hvac contractors albuquerque", "volume": 70, "difficulty": 26, "cpc": 1800 },
+      { "keyword": "hvac repair albuquerque", "volume": 150, "difficulty": 31, "cpc": 250 },
+      { "keyword": "best hvac albuquerque", "volume": 10, "difficulty": null, "cpc": null },
+      { "keyword": "hvac albuquerque", "volume": 800, "difficulty": 43, "cpc": 1500 }
+    ]
+  },
+  "tulsa": {
+    "keywords": [
+      { "keyword": "hvac repair tulsa", "volume": 300, "difficulty": 30, "cpc": 2500 },
+      { "keyword": "hvac contractors tulsa", "volume": 100, "difficulty": 30, "cpc": null },
+      { "keyword": "ac repair tulsa", "volume": 450, "difficulty": 21, "cpc": 2500 },
+      { "keyword": "hvac tulsa", "volume": 300, "difficulty": 36, "cpc": 2500 },
+      { "keyword": "best hvac tulsa", "volume": 30, "difficulty": null, "cpc": null }
+    ]
+  },
+  "oklahoma-city": {
+    "keywords": [
+      { "keyword": "hvac oklahoma city", "volume": 200, "difficulty": 27, "cpc": 1100 },
+      { "keyword": "ac repair oklahoma city", "volume": 200, "difficulty": 16, "cpc": 140 },
+      { "keyword": "hvac repair oklahoma city", "volume": 200, "difficulty": 39, "cpc": 140 },
+      { "keyword": "hvac contractors oklahoma city", "volume": 150, "difficulty": 29, "cpc": 1100 }
+    ]
+  },
+  "las-vegas": {
+    "keywords": [
+      { "keyword": "hvac repair las vegas", "volume": 700, "difficulty": 43, "cpc": 4500 },
+      { "keyword": "best hvac las vegas", "volume": 50, "difficulty": 33, "cpc": 2000 },
+      { "keyword": "hvac las vegas", "volume": 1100, "difficulty": 42, "cpc": 1400 },
+      { "keyword": "ac repair las vegas", "volume": 1500, "difficulty": 52, "cpc": 900 },
+      { "keyword": "hvac contractors las vegas", "volume": 400, "difficulty": 26, "cpc": 500 }
+    ]
+  },
+  "el-paso": {
+    "keywords": [
+      { "keyword": "hvac el paso", "volume": 300, "difficulty": 21, "cpc": 400 },
+      { "keyword": "ac repair el paso", "volume": 200, "difficulty": 28, "cpc": 350 },
+      { "keyword": "hvac repair el paso", "volume": 80, "difficulty": 31, "cpc": 450 },
+      { "keyword": "hvac contractors el paso", "volume": 0, "difficulty": null, "cpc": null }
+    ]
+  },
+  "memphis": {
+    "keywords": [
+      { "keyword": "hvac memphis", "volume": 400, "difficulty": 29, "cpc": 1000 },
+      { "keyword": "hvac contractors memphis", "volume": 20, "difficulty": null, "cpc": null },
+      { "keyword": "hvac repair memphis", "volume": 150, "difficulty": 28, "cpc": 1100 },
+      { "keyword": "ac repair memphis", "volume": 200, "difficulty": 37, "cpc": 450 }
+    ]
+  },
+  "tampa": {
+    "keywords": [
+      { "keyword": "hvac tampa", "volume": 600, "difficulty": 11, "cpc": 1000 },
+      { "keyword": "ac repair tampa", "volume": 1100, "difficulty": 34, "cpc": 2500 },
+      { "keyword": "hvac repair tampa", "volume": 300, "difficulty": 31, "cpc": 3000 },
+      { "keyword": "best hvac tampa", "volume": 0, "difficulty": null, "cpc": 0 },
+      { "keyword": "hvac contractors tampa", "volume": 70, "difficulty": 8, "cpc": 1100 }
+    ]
+  },
+  "knoxville": {
+    "keywords": [
+      { "keyword": "best hvac knoxville", "volume": 0, "difficulty": null, "cpc": null },
+      { "keyword": "hvac contractors knoxville", "volume": 30, "difficulty": null, "cpc": 1200 },
+      { "keyword": "hvac repair knoxville", "volume": 20, "difficulty": 25, "cpc": 1600 },
+      { "keyword": "hvac knoxville", "volume": 150, "difficulty": 0, "cpc": 1500 },
+      { "keyword": "ac repair knoxville", "volume": 200, "difficulty": 13, "cpc": 700 }
+    ]
+  }
+}

@@ -1,7 +1,8 @@
 import { Quote, ShieldCheck } from "lucide-react";
-import { TUCSON_VERIFIED_REVIEWS } from "@/data/tucson-reviews";
 import { StarRating } from "@/components/shared/StarRating";
+import type { VerifiedReview } from "@/data/types";
 
+const FALLBACK_AVATAR = "linear-gradient(135deg, #1A2944 0%, #3F5A85 100%)";
 const AVATAR_BG: Record<string, string> = {
   MR: "linear-gradient(135deg, #C28A2A 0%, #E0A748 100%)",
   JT: "linear-gradient(135deg, #1E4A40 0%, #2E8C6F 100%)",
@@ -10,22 +11,28 @@ const AVATAR_BG: Record<string, string> = {
   AL: "linear-gradient(135deg, #57452E 0%, #886A48 100%)",
 };
 
-export function VerifiedReviewsCarousel() {
+export function VerifiedReviewsCarousel({
+  reviews,
+  cityName,
+}: {
+  reviews: VerifiedReview[];
+  cityName: string;
+}) {
   return (
     <section className="py-12 md:py-14" style={{ background: "var(--brand-muted)" }}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-center gap-2 mb-2">
           <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full" style={{ background: "var(--brand-accent-soft)", color: "var(--brand-accent)" }}>
-            <ShieldCheck size={13} /> Verified by HomeAdvisor
+            <ShieldCheck size={13} /> Verified review samples
           </span>
         </div>
-        <h2 className="heading text-2xl md:text-3xl mt-1">What real Tucson homeowners say about our top picks</h2>
+        <h2 className="heading text-2xl md:text-3xl mt-1">What real {cityName} homeowners say about our top picks</h2>
         <p className="text-base mt-2 max-w-2xl" style={{ color: "var(--brand-fg-soft)" }}>
           We pull verified reviews from each contractor's HomeAdvisor and Google Business Profile every quarter. Here are the most recent five we've vetted.
         </p>
 
         <div className="mt-7 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {TUCSON_VERIFIED_REVIEWS.map((r) => (
+          {reviews.map((r) => (
             <article
               key={r.authorName + r.contractor}
               className="rounded-xl p-5 relative"
@@ -34,8 +41,8 @@ export function VerifiedReviewsCarousel() {
               <Quote size={28} style={{ color: "var(--brand-accent-soft)", position: "absolute", top: 16, right: 16 }} />
               <div className="flex items-center gap-3 mb-3">
                 <div
-                  className="grid place-items-center rounded-full text-white text-sm font-semibold flex-shrink-0"
-                  style={{ width: 42, height: 42, background: AVATAR_BG[r.authorInitials] || "#3A4254" }}
+                  className="grid place-items-center rounded-full text-white text-sm font-semibold shrink-0"
+                  style={{ width: 42, height: 42, background: AVATAR_BG[r.authorInitials] || FALLBACK_AVATAR }}
                 >
                   {r.authorInitials}
                 </div>

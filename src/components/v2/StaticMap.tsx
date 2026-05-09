@@ -1,5 +1,4 @@
-import { TUCSON_CONTRACTORS } from "@/data/tucson-contractors";
-import { TUCSON_BBOX, TUCSON_CONTRACTOR_COORDS } from "@/data/tucson-reviews";
+import type { CityData } from "@/data/types";
 
 const NEIGHBORHOODS = [
   { name: "Catalina Foothills", x: 0.62, y: 0.18 },
@@ -11,13 +10,13 @@ const NEIGHBORHOODS = [
   { name: "Vail", x: 0.84, y: 0.78 },
 ];
 
-function project(lat: number, lng: number) {
-  const x = ((lng - TUCSON_BBOX.minLng) / (TUCSON_BBOX.maxLng - TUCSON_BBOX.minLng)) * 100;
-  const y = (1 - (lat - TUCSON_BBOX.minLat) / (TUCSON_BBOX.maxLat - TUCSON_BBOX.minLat)) * 100;
+function project(lat: number, lng: number, bbox: CityData["bbox"]) {
+  const x = ((lng - bbox.minLng) / (bbox.maxLng - bbox.minLng)) * 100;
+  const y = (1 - (lat - bbox.minLat) / (bbox.maxLat - bbox.minLat)) * 100;
   return { x: Math.max(2, Math.min(98, x)), y: Math.max(2, Math.min(98, y)) };
 }
 
-export function StaticMap() {
+export function StaticMap({ city }: { city: CityData }) {
   return (
     <section className="py-10" style={{ background: "var(--brand-surface)" }}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -29,15 +28,15 @@ export function StaticMap() {
               </div>
               <h3 className="heading text-2xl md:text-3xl mt-1">Where our top picks operate</h3>
               <p className="text-sm mt-3" style={{ color: "var(--brand-fg-soft)" }}>
-                Coverage spans Tucson + Marana, Oro Valley, Vail, and Catalina Foothills. Pins below are color-coded by rank — green is our #1 pick, ranking down through the top 10.
+                Pins below are color-coded by rank — green is our #1 pick, ranking down through the top {city.contractors.length}. {city.meta.city} metro coverage spans {city.meta.metroPopulation.toLocaleString()} residents.
               </p>
 
               <div className="mt-5 grid grid-cols-2 gap-2 text-xs" style={{ color: "var(--brand-fg-soft)" }}>
                 {[
-                  ["Service zips", "85701–85775"],
                   ["Avg response", "2.1 hrs"],
                   ["Same-day rate", "87%"],
-                  ["Coverage", "1,743 sq mi"],
+                  ["State", city.meta.state],
+                  ["Recommended", `${city.contractors.length} contractors`],
                 ].map(([k, v]) => (
                   <div key={k}>
                     <div className="font-semibold" style={{ color: "var(--brand-fg)" }}>{v}</div>
@@ -64,10 +63,8 @@ export function StaticMap() {
                 <path d="M30,0 Q34,30 30,55 T28,100" stroke="#9E8665" strokeWidth="0.4" fill="none" opacity="0.55" />
                 <path d="M62,0 Q66,40 64,68 T62,100" stroke="#9E8665" strokeWidth="0.4" fill="none" opacity="0.55" />
                 <path d="M0,30 Q35,28 60,32 T100,28" stroke="#9E8665" strokeWidth="0.5" fill="none" opacity="0.65" />
-                <text x="6" y="35" fontSize="2.4" fill="#5A5447" opacity="0.6" fontFamily="var(--font-sans)">I-10</text>
-                <text x="58" y="20" fontSize="2.4" fill="#5A5447" opacity="0.6" fontFamily="var(--font-sans)">N La Cholla</text>
               </svg>
-              {NEIGHBORHOODS.map((n) => (
+              {city.slug === "tucson" ? NEIGHBORHOODS.map((n) => (
                 <div
                   key={n.name}
                   className="absolute text-[10px] font-semibold"
@@ -82,10 +79,11 @@ export function StaticMap() {
                 >
                   {n.name}
                 </div>
-              ))}
-              {TUCSON_CONTRACTORS.map((c) => {
-                const coords = TUCSON_CONTRACTOR_COORDS[c.rank];
-                const { x, y } = project(coords.lat, coords.lng);
+              )) : null}
+              {city.contractors.map((c) => {
+                const coords = city.contractorCoords[c.rank];
+                if (!coords) return null;
+                const { x, y } = project(coords.lat, coords.lng, city.bbox);
                 const isTop3 = c.rank <= 3;
                 return (
                   <div

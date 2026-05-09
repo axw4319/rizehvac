@@ -1,0 +1,7 @@
+# rizehvac.com — fully indexable
+# Default: allow every crawler everywhere. Per-page noindex (via metadata) only.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://rizehvac.com/sitemap.xml

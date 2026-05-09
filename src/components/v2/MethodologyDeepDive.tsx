@@ -1,29 +1,29 @@
 import { Award, Check, FileText, Users } from "lucide-react";
-import { TUCSON_METHODOLOGY_CRITERIA } from "@/data/tucson-reviews";
+import type { CityData } from "@/data/types";
 
-export function MethodologyDeepDive() {
+export function MethodologyDeepDive({ city }: { city: CityData }) {
   return (
     <section id="methodology" className="py-14 md:py-20 border-t" style={{ borderColor: "var(--brand-border)" }}>
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="text-xs font-semibold uppercase tracking-wider" style={{ color: "var(--brand-accent)" }}>
-          How we picked these 10
+          How we picked these {city.contractors.length}
         </div>
         <h2 className="heading text-3xl md:text-4xl mt-2 max-w-3xl">
           Our methodology, made visible — because everyone else hides theirs
         </h2>
         <p className="mt-4 text-base md:text-lg max-w-3xl" style={{ color: "var(--brand-fg-soft)" }}>
-          We started with all 142 active AZ ROC-licensed HVAC contractors in Pima County. We narrowed to 62 with verifiable BBB filings, NATE certification, and a minimum of 5 years in business. Then we applied 8 weighted criteria — the same rubric we use for every city we cover.
+          We started with every active state-licensed HVAC contractor in the {city.meta.city} metro. We narrowed by verifiable BBB filings, NATE certification, and a minimum of 5 years in business. Then we applied 8 weighted criteria — the same rubric we use for every city we cover.
         </p>
 
         <div className="mt-8 grid md:grid-cols-2 gap-x-8 gap-y-3">
-          {TUCSON_METHODOLOGY_CRITERIA.map((c) => (
+          {city.methodology.map((c) => (
             <div
               key={c.label}
               className="flex items-center gap-3 py-2.5 border-b"
               style={{ borderColor: "var(--brand-border)" }}
             >
               <div
-                className="grid place-items-center rounded-md flex-shrink-0"
+                className="grid place-items-center rounded-md shrink-0"
                 style={{
                   width: 32,
                   height: 32,
@@ -33,9 +33,7 @@ export function MethodologyDeepDive() {
               >
                 <Check size={18} />
               </div>
-              <div className="flex-1 font-medium" style={{ color: "var(--brand-fg)" }}>
-                {c.label}
-              </div>
+              <div className="flex-1 font-medium" style={{ color: "var(--brand-fg)" }}>{c.label}</div>
               <div className="text-sm font-semibold tabular-nums" style={{ color: "var(--brand-fg-soft)" }}>
                 {c.weight}%
               </div>
@@ -46,16 +44,16 @@ export function MethodologyDeepDive() {
         <div className="mt-10 grid md:grid-cols-3 gap-4">
           <div className="rounded-xl p-5" style={{ background: "var(--brand-muted)", border: "1px solid var(--brand-border)" }}>
             <Users size={20} style={{ color: "var(--brand-accent)" }} />
-            <div className="heading text-xl mt-3">142 → 62 → 10</div>
+            <div className="heading text-xl mt-3">{city.meta.totalContractorsResearched} → {city.contractors.length}</div>
             <p className="text-sm mt-2" style={{ color: "var(--brand-fg-soft)" }}>
-              Started with every AZ ROC-licensed HVAC contractor in Pima County. Final 10 represent the top 7% by combined score.
+              Started with every active {city.meta.state} state-licensed HVAC contractor in {city.meta.city}. Final {city.contractors.length} represent the top tier by combined score.
             </p>
           </div>
           <div className="rounded-xl p-5" style={{ background: "var(--brand-muted)", border: "1px solid var(--brand-border)" }}>
             <FileText size={20} style={{ color: "var(--brand-accent)" }} />
             <div className="heading text-xl mt-3">14 sources cited</div>
             <p className="text-sm mt-2" style={{ color: "var(--brand-fg-soft)" }}>
-              AZ ROC license database, BBB regional reports, EPA refrigerant handler registry, NATE certification roster, Pima County permit data, and 9 more.
+              State licensing database, BBB regional reports, EPA refrigerant handler registry, NATE certification roster, county permit data, and 9 more.
             </p>
           </div>
           <div className="rounded-xl p-5" style={{ background: "var(--brand-muted)", border: "1px solid var(--brand-border)" }}>
@@ -72,10 +70,10 @@ export function MethodologyDeepDive() {
             Reviewed by
           </div>
           <div className="mt-1 heading text-lg" style={{ color: "var(--brand-fg)" }}>
-            Carlos Mendoza · NATE-Certified Master Technician · 22 years HVAC
+            {city.credits.factChecker.name} · {city.credits.factChecker.title}
           </div>
           <p className="text-sm mt-2" style={{ color: "var(--brand-fg-soft)" }}>
-            Carlos personally verified license status and reviewed every contractor's installation portfolio for our 2026 Tucson rankings. He has no financial relationship with any contractor on this list.
+            {city.credits.factChecker.bio} {city.credits.factChecker.name.split(" ")[0]} personally verified license status and reviewed every contractor's installation portfolio for our 2026 {city.meta.city} rankings. They have no financial relationship with any contractor on this list.
           </p>
         </div>
       </div>
