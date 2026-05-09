@@ -24,7 +24,7 @@ export function FaqBlock({
                 <h3 className="heading text-lg md:text-xl pr-4" style={{ color: "var(--brand-fg)" }}>{f.q}</h3>
                 <ChevronDown
                   size={22}
-                  className="flex-shrink-0 transition-transform duration-200 group-open:rotate-180 mt-1"
+                  className="shrink-0 transition-transform duration-200 group-open:rotate-180 mt-1"
                   style={{ color: "var(--brand-muted-fg)" }}
                 />
               </summary>

@@ -25,7 +25,7 @@ function Person({
   return (
     <div className="flex items-center gap-2.5">
       <div
-        className="grid place-items-center rounded-full text-white text-xs font-semibold flex-shrink-0"
+        className="grid place-items-center rounded-full text-white text-xs font-semibold shrink-0"
         style={{ width: 38, height: 38, background: gradientFor(initials) }}
       >
         {initials}
@@ -50,7 +50,7 @@ export function MultiCreditByline({ credits }: { credits: EditorialCredits }) {
           <Person role="Edited by" name={credits.editor.name} title={credits.editor.title} initials={credits.editor.initials} />
           <Person role="Fact-checked by" name={credits.factChecker.name} title={credits.factChecker.title} initials={credits.factChecker.initials} />
         </div>
-        <div className="flex flex-col items-end text-right gap-1 flex-shrink-0">
+        <div className="flex flex-col items-end text-right gap-1 shrink-0">
           <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full" style={{ background: "var(--brand-accent-soft)", color: "var(--brand-accent)" }}>
             <ShieldCheck size={13} />
             Independent · No paid placements

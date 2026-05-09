@@ -46,7 +46,7 @@ export function StaticMap({ city }: { city: CityData }) {
               </div>
             </div>
             <div
-              className="lg:col-span-7 relative aspect-[4/3] lg:aspect-auto lg:min-h-[400px]"
+              className="lg:col-span-7 relative aspect-4/3 lg:aspect-auto lg:min-h-[400px]"
               style={{
                 background:
                   "radial-gradient(ellipse at 50% 40%, #F1ECE2 0%, #E8DDC6 60%, #C6B79A 100%)",

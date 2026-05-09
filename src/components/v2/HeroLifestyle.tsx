@@ -121,7 +121,7 @@ export function HeroLifestyle({
             <polygon points="20,118 170,10 180,40 60,120" fill="var(--brand-cta)" opacity="0.85" />
           </svg>
 
-          <div className="relative aspect-[4/3] rounded-md overflow-hidden shadow-2xl" style={{ borderColor: "var(--brand-border-inverse)" }}>
+          <div className="relative aspect-4/3 rounded-md overflow-hidden shadow-2xl" style={{ borderColor: "var(--brand-border-inverse)" }}>
             <Image
               src={photoSrc}
               alt={`A NATE-certified HVAC technician inspecting a Trane condenser at a ${city.meta.city} home`}

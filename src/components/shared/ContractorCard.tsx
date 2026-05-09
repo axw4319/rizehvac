@@ -10,7 +10,7 @@ export function ContractorCard({ contractor, brand }: { contractor: Contractor; 
       <div className="p-5 md:p-6">
         <div className="flex items-start gap-5">
           <div
-            className="hidden sm:grid place-items-center heading text-2xl font-semibold flex-shrink-0"
+            className="hidden sm:grid place-items-center heading text-2xl font-semibold shrink-0"
             style={{
               width: 56,
               height: 56,
