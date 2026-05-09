@@ -1,0 +1,19 @@
+{
+  "url": "http://localhost:8900/",
+  "label": "rizehvac homepage + tucson pages — vB editorial pre-ship QA",
+  "browsers": ["chromium", "webkit", "firefox"],
+  "viewports": [
+    {"name": "mobile-iphone14", "w": 390, "h": 844},
+    {"name": "mobile-pixel7",   "w": 412, "h": 915},
+    {"name": "tablet",          "w": 768, "h": 1024},
+    {"name": "desktop-1440",    "w": 1440, "h": 900},
+    {"name": "desktop-1920",    "w": 1920, "h": 1080}
+  ],
+  "screenshots": [
+    {"name": "home-fold", "complaint": "homepage above-the-fold renders correctly"},
+    {"name": "home-hero-photo", "selector": "img[alt*='NATE']", "complaint": "tucson hero photo loads without distortion"},
+    {"name": "home-zip-card", "selector": "form", "complaint": "zip card form renders cleanly over photo"},
+    {"name": "home-trust-strip", "selector": "section[id='hero']", "complaint": "5-badge trust strip fits at hero bottom"}
+  ],
+  "checks": []
+}

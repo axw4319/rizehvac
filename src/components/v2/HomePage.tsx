@@ -248,15 +248,30 @@ export function HomePage() {
                   className={`group rounded-lg overflow-hidden border block ${isLive ? "" : "pointer-events-none opacity-60"}`}
                   style={{ borderColor: "var(--brand-border)", background: "var(--brand-bg)" }}
                 >
-                  <div className="relative aspect-16/9 overflow-hidden" style={{ background: "var(--brand-bg-inverse)" }}>
-                    <Image
-                      src={`/photos/${photoSlug}-1200.webp`}
-                      alt={`${meta.city}, ${meta.state}`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(10, 31, 62, 0.8) 100%)" }} />
+                  <div
+                    className="relative aspect-16/9 overflow-hidden"
+                    style={{
+                      background: isLive
+                        ? "var(--brand-bg-inverse)"
+                        : "linear-gradient(135deg, var(--brand-bg-inverse) 0%, var(--brand-accent) 100%)",
+                    }}
+                  >
+                    {isLive ? (
+                      <>
+                        <Image
+                          src={`/photos/${photoSlug}-1200.webp`}
+                          alt={`${meta.city}, ${meta.state}`}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(10, 31, 62, 0.8) 100%)" }} />
+                      </>
+                    ) : (
+                      <div className="absolute inset-0 grid place-items-center">
+                        <span className="display text-7xl opacity-15" style={{ color: "var(--brand-fg-inverse)" }}>{meta.state}</span>
+                      </div>
+                    )}
                     <div className="absolute bottom-3 left-3 right-3 text-white">
                       <div className="display text-3xl leading-none">{meta.city}</div>
                       <div className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: "var(--brand-accent-bright)" }}>{meta.state}</div>
