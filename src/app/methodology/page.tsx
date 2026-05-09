@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/shared/SiteFooter";
 import { BRANDS } from "@/lib/brands";
 import { TUCSON_EDITORIAL_CREDITS, TUCSON_METHODOLOGY_CRITERIA } from "@/data/tucson-reviews";
 import { Award, Check, FileText, ShieldCheck, Users } from "lucide-react";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Our methodology",
@@ -14,8 +15,19 @@ export const metadata: Metadata = {
 };
 
 export default function MethodologyPage() {
+  const article = generateArticleSchema({
+    headline: "How rizehvac ranks HVAC contractors",
+    description: "Our methodology, made visible: 8 weighted criteria, 14 data sources, NATE-certified fact-checker, no paid placements.",
+    pageUrl: "/methodology",
+  });
+  const breadcrumb = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Methodology", url: "/methodology" },
+  ]);
   return (
     <div style={{ ...v2Vars, background: "var(--brand-bg)", minHeight: "100vh", color: "var(--brand-fg)" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <V2Header phone="(520) 207-2500" cityLabel="" />
 
       <section className="border-b" style={{ background: "var(--brand-bg-inverse)", color: "var(--brand-fg-inverse)", borderColor: "rgba(63, 169, 245, 0.18)" }}>

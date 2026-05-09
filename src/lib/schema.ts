@@ -183,6 +183,42 @@ export function generateBreadcrumbSchema(
   };
 }
 
+// -- Article (for editorial pages like /methodology, /about) -------
+
+export type ArticleInput = {
+  headline: string;
+  description: string;
+  pageUrl: string;
+  datePublished?: string;
+  dateModified?: string;
+  authorName?: string;
+  imageUrl?: string;
+};
+
+export function generateArticleSchema(a: ArticleInput): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: a.headline,
+    description: a.description,
+    url: a.pageUrl.startsWith("http") ? a.pageUrl : `${SITE_URL}${a.pageUrl}`,
+    image: a.imageUrl ?? `${SITE_URL}/og.jpg`,
+    datePublished: a.datePublished ?? "2026-05-08",
+    dateModified: a.dateModified ?? new Date().toISOString().slice(0, 10),
+    author: {
+      "@type": "Organization",
+      name: a.authorName ?? ORG_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: ORG_NAME,
+      url: SITE_URL,
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
+    },
+  };
+}
+
 // -- Organization ---------------------------------------------------
 
 export function generateOrganizationSchema(): Record<string, unknown> {

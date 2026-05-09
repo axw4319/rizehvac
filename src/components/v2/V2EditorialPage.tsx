@@ -2,6 +2,7 @@ import { v2Vars } from "@/lib/v2theme";
 import { V2Header } from "./V2Header";
 import { HeroEditorial } from "./HeroEditorial";
 import { MultiCreditByline } from "./MultiCreditByline";
+import { QuickAnswerBlock } from "./QuickAnswerBlock";
 import { ComparisonTable } from "./ComparisonTable";
 import { VerifiedReviewsCarousel } from "./VerifiedReviewsCarousel";
 import { V2RankingsSection } from "./V2RankingsSection";
@@ -22,6 +23,7 @@ export function V2EditorialPage({ city }: { city: CityData }) {
         subhead={`We compared ${city.meta.totalContractorsResearched} ${city.meta.city} HVAC contractors against 8 weighted criteria. Here are the ${city.contractors.length} we'd hire — and the contractors we'd specifically avoid.`}
       />
       <MultiCreditByline credits={city.credits} />
+      <QuickAnswerBlock city={city} variant="city" />
       <ComparisonTable city={city} />
       <VerifiedReviewsCarousel reviews={city.verifiedReviews} cityName={city.meta.city} />
       <V2RankingsSection city={city} />

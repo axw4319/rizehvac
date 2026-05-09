@@ -4,6 +4,7 @@ import { V2Header } from "@/components/v2/V2Header";
 import { SiteFooter } from "@/components/shared/SiteFooter";
 import { BRANDS } from "@/lib/brands";
 import { Award, FileText, Phone, ShieldCheck } from "lucide-react";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About rizehvac",
@@ -13,8 +14,19 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const article = generateArticleSchema({
+    headline: "About rizehvac",
+    description: "rizehvac is an independent HVAC contractor directory. We rank by who we'd hire — never by who pays.",
+    pageUrl: "/about",
+  });
+  const breadcrumb = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "About", url: "/about" },
+  ]);
   return (
     <div style={{ ...v2Vars, background: "var(--brand-bg)", minHeight: "100vh", color: "var(--brand-fg)" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <V2Header phone="(520) 207-2500" cityLabel="" />
 
       <section className="border-b" style={{ background: "var(--brand-bg-inverse)", color: "var(--brand-fg-inverse)", borderColor: "rgba(63, 169, 245, 0.18)" }}>
