@@ -15,10 +15,16 @@ export const metadata: Metadata = {
 };
 
 export default function MethodologyPage() {
+  const { author, editor, factChecker } = TUCSON_EDITORIAL_CREDITS;
   const article = generateArticleSchema({
     headline: "How rizehvac ranks HVAC contractors",
     description: "Our methodology, made visible: 8 weighted criteria, 14 data sources, NATE-certified fact-checker, no paid placements.",
     pageUrl: "/methodology",
+    authors: [
+      { name: author.name, slug: "jordan-marshall" },
+      { name: editor.name, slug: "lena-park" },
+      { name: factChecker.name, slug: "carlos-mendoza" },
+    ],
   });
   const breadcrumb = generateBreadcrumbSchema([
     { name: "Home", url: "/" },
@@ -97,25 +103,29 @@ export default function MethodologyPage() {
           <h2 className="display text-4xl md:text-5xl mb-5">14 sources we cross-check.</h2>
 
           <div className="grid sm:grid-cols-2 gap-3">
-            {[
-              "State contractor licensing database (per state)",
-              "BBB regional reports + complaint history",
-              "EPA refrigerant handler registry (Section 608)",
-              "NATE certification roster (national)",
-              "ACCA contractor membership directory",
-              "Energy Star Most Efficient Partner list",
-              "Lennox / Trane / Carrier / Goodman dealer locators",
-              "County permit issuance records (3-year window)",
-              "Google Business Profile reviews + photos",
-              "Yelp business profiles (cross-reference only)",
-              "HomeAdvisor verified review feeds",
-              "Better Business Bureau accreditation status",
-              "OSHA citation history (where applicable)",
-              "Direct phone calls to verify scope of services",
-            ].map((s) => (
-              <div key={s} className="flex items-start gap-2 text-sm py-1.5" style={{ color: "var(--brand-fg-soft)" }}>
+            {([
+              { label: "State contractor licensing database (per state)", url: "https://roc.az.gov/contractor-search" },
+              { label: "BBB regional reports + complaint history", url: "https://www.bbb.org" },
+              { label: "EPA refrigerant handler registry (Section 608)", url: "https://www.epa.gov/section608" },
+              { label: "NATE certification roster (national)", url: "https://www.natex.org" },
+              { label: "ACCA contractor membership directory", url: "https://www.acca.org" },
+              { label: "Energy Star Most Efficient Partner list", url: "https://www.energystar.gov" },
+              { label: "Lennox / Trane / Carrier / Goodman dealer locators", url: "https://www.lennox.com/dealers/dealer-locator" },
+              { label: "County permit issuance records (3-year window)", url: "https://www.pima.gov/280/Permit-Records" },
+              { label: "Google Business Profile reviews + photos", url: "https://www.google.com/business/" },
+              { label: "Yelp business profiles (cross-reference only)", url: "https://www.yelp.com" },
+              { label: "HomeAdvisor verified review feeds", url: "https://www.homeadvisor.com" },
+              { label: "Better Business Bureau accreditation status", url: "https://www.bbb.org/accreditation" },
+              { label: "OSHA citation history (where applicable)", url: "https://www.osha.gov/pls/imis/establishment.html" },
+              { label: "Direct phone calls to verify scope of services", url: null },
+            ] as const).map((s) => (
+              <div key={s.label} className="flex items-start gap-2 text-sm py-1.5" style={{ color: "var(--brand-fg-soft)" }}>
                 <FileText size={14} style={{ color: "var(--brand-cta)", flexShrink: 0, marginTop: 3 }} />
-                <span>{s}</span>
+                {s.url ? (
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-[var(--brand-cta)]">{s.label}</a>
+                ) : (
+                  <span>{s.label}</span>
+                )}
               </div>
             ))}
           </div>

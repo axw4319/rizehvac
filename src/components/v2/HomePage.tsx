@@ -69,7 +69,8 @@ export function HomePage() {
             alt="A NATE-certified HVAC technician inspecting a Trane condenser at a home"
             fill
             priority
-            sizes="100vw"
+            fetchPriority="high"
+            sizes="(max-width: 640px) 800px, (max-width: 1280px) 1200px, 1920px"
             className="object-cover"
           />
           <div

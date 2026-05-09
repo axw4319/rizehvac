@@ -25,7 +25,8 @@ export function HeroEditorial({
           alt={`A NATE-certified HVAC technician inspecting a Trane condenser at a ${city.meta.city} home`}
           fill
           priority
-          sizes="100vw"
+          fetchPriority="high"
+          sizes="(max-width: 640px) 800px, (max-width: 1280px) 1200px, 1920px"
           className="object-cover"
         />
         <div
@@ -114,7 +115,9 @@ export function HeroEditorial({
                 className="rounded-md border-2 px-3.5 py-3 text-base"
                 style={{ borderColor: "var(--brand-border-strong)", background: "var(--brand-surface)" }}
               />
+              <label htmlFor="hero-issue-select" className="sr-only">Type of issue</label>
               <select
+                id="hero-issue-select"
                 defaultValue=""
                 className="rounded-md border-2 px-3.5 py-3 text-base appearance-none"
                 style={{ borderColor: "var(--brand-border-strong)", background: "var(--brand-surface)" }}

@@ -20,10 +20,10 @@ export function SiteFooter({ brand }: { brand: Brand }) {
             Cities
           </div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href="#">Tucson</a></li>
-            <li><a href="#">Phoenix</a></li>
-            <li><a href="#">Albuquerque</a></li>
-            <li><a href="#">Las Vegas</a></li>
+            <li><a href="/hvac/tucson">Tucson, AZ</a></li>
+            <li><a href="/ac-repair/tucson">Tucson AC Repair</a></li>
+            <li><a href="/hvac-cost/tucson">Tucson HVAC Cost</a></li>
+            <li><a href="/" style={{ opacity: 0.7 }}>9 more cities — soon</a></li>
           </ul>
         </div>
         <div>
@@ -31,10 +31,10 @@ export function SiteFooter({ brand }: { brand: Brand }) {
             Resources
           </div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href="#">Cost guides</a></li>
-            <li><a href="#">Repair vs replace</a></li>
-            <li><a href="#">Rebate finder</a></li>
-            <li><a href="#">Methodology</a></li>
+            <li><a href="/hvac-cost/tucson">Cost guides</a></li>
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -42,9 +42,9 @@ export function SiteFooter({ brand }: { brand: Brand }) {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-xs" style={{ color: "var(--brand-muted-fg)" }}>
           <div>© {new Date().getFullYear()} rizehvac · Independent HVAC research · Brand: {brand.name}</div>
           <div className="flex gap-5">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Editorial standards</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/methodology">Editorial standards</a>
           </div>
         </div>
       </div>

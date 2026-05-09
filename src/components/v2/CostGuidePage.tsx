@@ -2,6 +2,7 @@ import { v2Vars } from "@/lib/v2theme";
 import { V2Header } from "./V2Header";
 import { HeroEditorial } from "./HeroEditorial";
 import { MultiCreditByline } from "./MultiCreditByline";
+import { CompensationDisclosure } from "./CompensationDisclosure";
 import { QuickAnswerBlock } from "./QuickAnswerBlock";
 import { FaqBlock } from "@/components/shared/FaqBlock";
 import { SiteFooter } from "@/components/shared/SiteFooter";
@@ -19,6 +20,7 @@ export function CostGuidePage({ city }: { city: CityData }) {
         subhead={`Real ${city.meta.city} HVAC pricing benchmarks, 4 stackable rebate programs, and what's worth paying for. Updated quarterly with data from local installs.`}
       />
       <MultiCreditByline credits={city.credits} />
+      <CompensationDisclosure />
       <QuickAnswerBlock city={city} variant="cost" />
 
       <section className="py-12 md:py-14" style={{ background: "var(--brand-surface)" }}>

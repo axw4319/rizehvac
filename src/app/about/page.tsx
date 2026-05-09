@@ -18,6 +18,9 @@ export default function AboutPage() {
     headline: "About rizehvac",
     description: "rizehvac is an independent HVAC contractor directory. We rank by who we'd hire — never by who pays.",
     pageUrl: "/about",
+    authors: [
+      { name: "Lena Park", slug: "lena-park" },
+    ],
   });
   const breadcrumb = generateBreadcrumbSchema([
     { name: "Home", url: "/" },

@@ -11,6 +11,12 @@ function gradientFor(initials: string) {
   return AVATAR_GRADIENTS[initials] || `linear-gradient(135deg, #1A2944 0%, #3F5A85 100%)`;
 }
 
+const NAME_TO_SLUG: Record<string, string> = {
+  "Jordan Marshall": "jordan-marshall",
+  "Lena Park": "lena-park",
+  "Carlos Mendoza": "carlos-mendoza",
+};
+
 function Person({
   role,
   name,
@@ -22,8 +28,9 @@ function Person({
   title: string;
   initials: string;
 }) {
-  return (
-    <div className="flex items-center gap-2.5">
+  const slug = NAME_TO_SLUG[name];
+  const inner = (
+    <div className="flex items-center gap-2.5 group">
       <div
         className="grid place-items-center rounded-full text-white text-xs font-semibold shrink-0"
         style={{ width: 38, height: 38, background: gradientFor(initials) }}
@@ -34,11 +41,12 @@ function Person({
         <div className="text-[11px] uppercase tracking-wider font-semibold" style={{ color: "var(--brand-mutedFg, #5A5447)" }}>
           {role}
         </div>
-        <div className="text-sm font-semibold" style={{ color: "var(--brand-fg)" }}>{name}</div>
+        <div className="text-sm font-semibold group-hover:underline" style={{ color: "var(--brand-fg)" }}>{name}</div>
         <div className="text-xs" style={{ color: "var(--brand-fg-soft)" }}>{title}</div>
       </div>
     </div>
   );
+  return slug ? <a href={`/authors/${slug}`}>{inner}</a> : inner;
 }
 
 export function MultiCreditByline({ credits }: { credits: EditorialCredits }) {

@@ -164,6 +164,20 @@ export function generateFAQPageSchema(
   };
 }
 
+// -- Speakable (voice-search readout for Quick Answer blocks) -------
+
+export function generateSpeakableSchema(pageUrl: string): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url: pageUrl.startsWith("http") ? pageUrl : `${SITE_URL}${pageUrl}`,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["[data-speakable]"],
+    },
+  };
+}
+
 // -- BreadcrumbList -------------------------------------------------
 
 export type BreadcrumbItem = { name: string; url: string };
@@ -185,17 +199,30 @@ export function generateBreadcrumbSchema(
 
 // -- Article (for editorial pages like /methodology, /about) -------
 
+export type AuthorRef = {
+  name: string;
+  slug?: string;
+  sameAs?: string[];
+};
+
 export type ArticleInput = {
   headline: string;
   description: string;
   pageUrl: string;
   datePublished?: string;
   dateModified?: string;
-  authorName?: string;
+  authors?: AuthorRef[];
   imageUrl?: string;
 };
 
 export function generateArticleSchema(a: ArticleInput): Record<string, unknown> {
+  const authors = a.authors && a.authors.length > 0 ? a.authors : [{ name: ORG_NAME }];
+  const authorPayload = authors.map((au) => ({
+    "@type": "Person",
+    name: au.name,
+    ...(au.slug ? { url: `${SITE_URL}/authors/${au.slug}` } : {}),
+    ...(au.sameAs && au.sameAs.length ? { sameAs: au.sameAs } : {}),
+  }));
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -205,16 +232,44 @@ export function generateArticleSchema(a: ArticleInput): Record<string, unknown> 
     image: a.imageUrl ?? `${SITE_URL}/og.jpg`,
     datePublished: a.datePublished ?? "2026-05-08",
     dateModified: a.dateModified ?? new Date().toISOString().slice(0, 10),
-    author: {
-      "@type": "Organization",
-      name: a.authorName ?? ORG_NAME,
-      url: SITE_URL,
-    },
+    author: authorPayload.length === 1 ? authorPayload[0] : authorPayload,
     publisher: {
       "@type": "Organization",
       name: ORG_NAME,
       url: SITE_URL,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
+    },
+  };
+}
+
+// -- Person (for /authors/[slug] pages) -----------------------------
+
+export type PersonInput = {
+  name: string;
+  slug: string;
+  jobTitle: string;
+  description: string;
+  email?: string;
+  knowsAbout?: string[];
+  sameAs?: string[];
+  affiliation?: string;
+};
+
+export function generatePersonSchema(p: PersonInput): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: p.name,
+    url: `${SITE_URL}/authors/${p.slug}`,
+    jobTitle: p.jobTitle,
+    description: p.description,
+    ...(p.email ? { email: p.email } : {}),
+    ...(p.knowsAbout && p.knowsAbout.length ? { knowsAbout: p.knowsAbout } : {}),
+    ...(p.sameAs && p.sameAs.length ? { sameAs: p.sameAs } : {}),
+    worksFor: {
+      "@type": "Organization",
+      name: p.affiliation ?? ORG_NAME,
+      url: SITE_URL,
     },
   };
 }
@@ -228,8 +283,20 @@ export function generateOrganizationSchema(): Record<string, unknown> {
     name: ORG_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
+    foundingDate: "2026",
+    description:
+      "Independent HVAC contractor directory. We rank contractors by 8 weighted criteria — never by who pays.",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-520-207-2500",
+      email: "editorial@rizehvac.com",
+      contactType: "editorial",
+      availableLanguage: ["English"],
+    },
     sameAs: [
-      // TODO: populate as social profiles go live.
+      "https://www.linkedin.com/company/rizehvac",
+      "https://x.com/rizehvac",
+      "https://github.com/axw4319/rizehvac",
     ],
   };
 }

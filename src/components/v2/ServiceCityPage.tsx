@@ -2,6 +2,7 @@ import { v2Vars } from "@/lib/v2theme";
 import { V2Header } from "./V2Header";
 import { HeroEditorial } from "./HeroEditorial";
 import { MultiCreditByline } from "./MultiCreditByline";
+import { CompensationDisclosure } from "./CompensationDisclosure";
 import { QuickAnswerBlock } from "./QuickAnswerBlock";
 import { ComparisonTable } from "./ComparisonTable";
 import { VerifiedReviewsCarousel } from "./VerifiedReviewsCarousel";
@@ -43,6 +44,7 @@ export function ServiceCityPage({ city }: { city: CityData }) {
         subhead={`Our top-rated ${city.meta.city} contractors for repair calls — ranked by speed, transparency, and repair-only specialization. Same-day appointments available for emergencies.`}
       />
       <MultiCreditByline credits={city.credits} />
+      <CompensationDisclosure />
       <QuickAnswerBlock city={city} variant="service-city" />
 
       <section className="py-10 md:py-12 border-b" style={{ borderColor: "var(--brand-border)" }}>

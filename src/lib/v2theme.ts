@@ -27,10 +27,11 @@ export const V2_THEME = {
   accentDark: "#0A1F3E",
   accentFg: "#FFFFFF",
 
-  // CTA — Tundra orange
-  cta: "#F97316",
-  ctaHover: "#EA580C",
-  ctaDeep: "#C2410C",
+  // CTA — Tundra orange. C2410C passes WCAG AA on white at 5.9:1 (was #F97316 = 3.0:1, fail).
+  cta: "#C2410C",
+  ctaHover: "#9A3412",
+  ctaDeep: "#7C2D12",
+  ctaBright: "#F97316",
   ctaFg: "#FFFFFF",
 
   rating: "#FBBF24",
@@ -61,6 +62,7 @@ export const v2Vars: CSSProperties = {
   "--brand-cta": V2_THEME.cta,
   "--brand-cta-hover": V2_THEME.ctaHover,
   "--brand-cta-deep": V2_THEME.ctaDeep,
+  "--brand-cta-bright": V2_THEME.ctaBright,
   "--brand-cta-fg": V2_THEME.ctaFg,
   "--brand-rating": V2_THEME.rating,
   "--brand-success": V2_THEME.success,

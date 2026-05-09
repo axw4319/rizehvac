@@ -34,7 +34,7 @@ export function QuickAnswerBlock({ city, variant = "city" }: { city: CityData; v
     <section className="border-b" style={{ background: "var(--brand-muted)", borderColor: "var(--brand-border)" }}>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-7 md:py-9">
         <div className="grid md:grid-cols-12 gap-6 items-start">
-          <div className="md:col-span-7">
+          <div className="md:col-span-7" data-speakable>
             <div className="text-[11px] font-semibold uppercase tracking-widest mb-1.5" style={{ color: "var(--brand-cta)" }}>
               Quick answer
             </div>

@@ -20,6 +20,7 @@ export function ComparisonTable({ city }: { city: CityData }) {
               <tr>
                 {["Rank", "Contractor", "Overall", "NATE", "24/7", "Warranty", "Avg quote", ""].map((h, i) => (
                   <th
+                    scope="col"
                     key={h + i}
                     className={`text-${i >= 3 && i <= 6 ? "center" : i === 7 ? "right" : "left"} px-3 py-3 font-semibold text-xs uppercase tracking-wider`}
                     style={{ color: "var(--brand-mutedFg, #5A5447)", whiteSpace: "nowrap" }}

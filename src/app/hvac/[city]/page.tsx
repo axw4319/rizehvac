@@ -6,6 +6,7 @@ import {
   generateBreadcrumbSchema,
   generateFAQPageSchema,
   generateItemListSchema,
+  generateSpeakableSchema,
 } from "@/lib/schema";
 
 type Params = Promise<{ city: string }>;
@@ -39,6 +40,7 @@ export default async function CityPage({ params }: { params: Params }) {
     pageUrl: `https://rizehvac.com/hvac/${slug}`,
   });
   const faq = generateFAQPageSchema(city.costFaqs.slice(0, 6));
+  const speakable = generateSpeakableSchema(`https://rizehvac.com/hvac/${slug}`);
   const breadcrumb = generateBreadcrumbSchema([
     { name: "Home", url: "https://rizehvac.com" },
     { name: city.meta.state, url: `https://rizehvac.com/hvac/${slug}` },
@@ -58,6 +60,10 @@ export default async function CityPage({ params }: { params: Params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakable) }}
       />
       <V2EditorialPage city={city} />
     </>
