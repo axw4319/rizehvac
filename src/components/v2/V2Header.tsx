@@ -23,11 +23,12 @@ export function V2Header({ phone, cityLabel }: { phone: string; cityLabel: strin
           ) : null}
         </a>
 
-        <nav className="hidden md:flex items-center gap-9 text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--brand-fg-inverse-soft, rgba(255,255,255,0.78))" }}>
-          <a href="/" className="hover:text-white">Services</a>
-          <a href="#methodology" className="hover:text-white">About</a>
-          <a href="/" className="hover:text-white">Cities</a>
-          <a href="/" className="hover:text-white">Blog</a>
+        <nav className="hidden md:flex items-center gap-7 text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--brand-fg-inverse-soft, rgba(255,255,255,0.78))" }}>
+          <a href="/hvac/dallas" className="hover:text-white">Dallas</a>
+          <a href="/blog" className="hover:text-white">Blog</a>
+          <a href="/what-is-rizescore" className="hover:text-white">RizeScore™</a>
+          <a href="/methodology" className="hover:text-white">Methodology</a>
+          <a href="/about" className="hover:text-white">About</a>
         </nav>
 
         <div className="flex items-center gap-3">

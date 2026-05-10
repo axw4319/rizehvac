@@ -1,6 +1,7 @@
-import { ArrowRight, Award, Phone, ShieldCheck, Star } from "lucide-react";
+import { Award, Phone } from "lucide-react";
 import Image from "next/image";
 import type { CityData, MethodologyCriterion, TrustBadge } from "@/data/types";
+import { MatchForm } from "./MatchForm";
 
 export function HeroEditorial({
   city,
@@ -89,70 +90,7 @@ export function HeroEditorial({
         </div>
 
         <aside className="md:col-span-5 lg:col-span-5">
-          <form
-            className="rounded-xl shadow-2xl p-5 md:p-6"
-            style={{ background: "var(--brand-surface)", border: "1px solid var(--brand-border)" }}
-          >
-            <div className="flex items-center gap-2 mb-2">
-              <ShieldCheck size={18} style={{ color: "var(--brand-accent)" }} />
-              <div className="text-xs uppercase font-semibold tracking-wider" style={{ color: "var(--brand-fg-soft)" }}>
-                Get matched in 60 seconds
-              </div>
-            </div>
-            <h3 className="display text-3xl mb-1" style={{ color: "var(--brand-fg)" }}>
-              Free quotes from our top 3
-            </h3>
-            <p className="text-sm mb-5" style={{ color: "var(--brand-fg-soft)" }}>
-              We'll send your ZIP and issue to the three closest contractors on this list. They each send a written quote within 24 hours.
-            </p>
-
-            <div className="grid grid-cols-2 gap-3 mb-3">
-              <input
-                type="text"
-                inputMode="numeric"
-                maxLength={5}
-                placeholder="ZIP code"
-                className="rounded-md border-2 px-3.5 py-3 text-base"
-                style={{ borderColor: "var(--brand-border-strong)", background: "var(--brand-surface)" }}
-              />
-              <label htmlFor="hero-issue-select" className="sr-only">Type of issue</label>
-              <select
-                id="hero-issue-select"
-                defaultValue=""
-                className="rounded-md border-2 px-3.5 py-3 text-base appearance-none"
-                style={{ borderColor: "var(--brand-border-strong)", background: "var(--brand-surface)" }}
-              >
-                <option value="" disabled>What&apos;s the issue?</option>
-                <option>AC not cooling</option>
-                <option>No heat</option>
-                <option>Loud noises</option>
-                <option>Replacement</option>
-                <option>Tune-up</option>
-              </select>
-            </div>
-            <input
-              type="email"
-              placeholder="Email for your quote"
-              className="w-full rounded-md border-2 px-3.5 py-3 text-base mb-4"
-              style={{ borderColor: "var(--brand-border-strong)", background: "var(--brand-surface)" }}
-            />
-            <button
-              type="button"
-              className="display w-full rounded-md py-3.5 text-lg font-extrabold inline-flex items-center justify-center gap-2 tracking-wider"
-              style={{ background: "var(--brand-cta)", color: "var(--brand-cta-fg)" }}
-            >
-              Match me with 3 contractors <ArrowRight size={18} />
-            </button>
-
-            <div className="mt-4 pt-4 border-t flex items-center gap-2 text-xs" style={{ borderColor: "var(--brand-border)", color: "var(--brand-fg-soft)" }}>
-              <span className="inline-flex items-center gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={12} fill="var(--brand-rating)" style={{ color: "var(--brand-rating)" }} />
-                ))}
-              </span>
-              <span><strong style={{ color: "var(--brand-fg)" }}>4.9</strong> from 2,378 matched homeowners</span>
-            </div>
-          </form>
+          <MatchForm variant="vertical" />
 
           <a
             href={`tel:${tel}`}

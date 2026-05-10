@@ -30,7 +30,7 @@ export default function AboutPage() {
     <div style={{ ...v2Vars, background: "var(--brand-bg)", minHeight: "100vh", color: "var(--brand-fg)" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      <V2Header phone="(520) 207-2500" cityLabel="" />
+      <V2Header phone="(214) 414-2500" cityLabel="" />
 
       <section className="border-b" style={{ background: "var(--brand-bg-inverse)", color: "var(--brand-fg-inverse)", borderColor: "rgba(63, 169, 245, 0.18)" }}>
         <div className="mx-auto max-w-4xl px-4 sm:px-6 py-14 md:py-20">
@@ -107,8 +107,8 @@ export default function AboutPage() {
             <a href="mailto:editorial@rizehvac.com" className="display text-sm font-extrabold rounded-md px-6 py-3 tracking-wider inline-flex items-center gap-2" style={{ border: "2px solid var(--brand-fg)", color: "var(--brand-fg)" }}>
               editorial@rizehvac.com
             </a>
-            <a href="tel:5202072500" className="display text-sm font-extrabold rounded-md px-6 py-3 tracking-wider inline-flex items-center gap-2" style={{ border: "2px solid var(--brand-fg)", color: "var(--brand-fg)" }}>
-              <Phone size={14} /> (520) 207-2500
+            <a href="tel:2144142500" className="display text-sm font-extrabold rounded-md px-6 py-3 tracking-wider inline-flex items-center gap-2" style={{ border: "2px solid var(--brand-fg)", color: "var(--brand-fg)" }}>
+              <Phone size={14} /> (214) 414-2500
             </a>
           </div>
         </div>

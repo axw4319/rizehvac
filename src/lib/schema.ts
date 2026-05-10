@@ -315,7 +315,7 @@ export function generateOrganizationSchema(): Record<string, unknown> {
       "Independent HVAC contractor directory. We rank contractors by 8 weighted criteria — never by who pays.",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-520-207-2500",
+      telephone: "+1-214-414-2500",
       email: "editorial@rizehvac.com",
       contactType: "editorial",
       availableLanguage: ["English"],

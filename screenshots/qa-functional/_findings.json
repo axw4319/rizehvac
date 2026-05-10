@@ -1,0 +1,588 @@
+{
+  "consoleErrors": [
+    {
+      "browser": "chromium",
+      "vp": "mobile",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "browser": "chromium",
+      "vp": "tablet",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "browser": "chromium",
+      "vp": "desktop",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "browser": "webkit",
+      "vp": "mobile",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "browser": "webkit",
+      "vp": "tablet",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "browser": "webkit",
+      "vp": "desktop",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    }
+  ],
+  "networkFailures": [
+    {
+      "browser": "chromium",
+      "vp": "mobile",
+      "url": "https://rizehvac.onrender.com/_next/image?url=%2Fphotos%2Fdallas-hero-1200.webp&w=640&q=75",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "browser": "chromium",
+      "vp": "mobile",
+      "url": "https://rizehvac.onrender.com/_next/image?url=%2Fphotos%2Fdallas-hero-2400.webp&w=828&q=75",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "browser": "chromium",
+      "vp": "mobile",
+      "url": "https://rizehvac.onrender.com/_next/image?url=%2Fphotos%2F5000-rule-hero-1920.webp&w=640&q=75",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "browser": "chromium",
+      "vp": "tablet",
+      "url": "https://rizehvac.onrender.com/_next/image?url=%2Fphotos%2Fdallas-hero-1200.webp&w=384&q=75",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "browser": "chromium",
+      "vp": "tablet",
+      "url": "https://rizehvac.onrender.com/_next/image?url=%2Fphotos%2Fdallas-hero-2400.webp&w=1200&q=75",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "browser": "chromium",
+      "vp": "tablet",
+      "url": "https://rizehvac.onrender.com/_next/image?url=%2Fphotos%2F5000-rule-hero-1920.webp&w=828&q=75",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "browser": "chromium",
+      "vp": "desktop",
+      "url": "https://rizehvac.onrender.com/_next/image?url=%2Fphotos%2Fdallas-hero-2400.webp&w=1920&q=75",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "browser": "chromium",
+      "vp": "desktop",
+      "url": "https://rizehvac.onrender.com/_next/image?url=%2Fphotos%2F5000-rule-hero-1920.webp&w=1080&q=75",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "brokenLinks": [],
+  "formIssues": [],
+  "navigation": [],
+  "axe": [
+    {
+      "url": "/",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 18,
+          "target": ".opacity-60.rounded-lg[href=\"#\"]:nth-child(2) > .aspect-16\\/9.relative.overflow-hidden > .top-3.text-\\[10px\\].font-bold"
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "nodes": 1,
+          "target": ".mb-1"
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "description": "Ensure all page content is contained by landmarks",
+          "nodes": 33,
+          "target": ".z-0"
+        },
+        {
+          "id": "select-name",
+          "impact": "critical",
+          "description": "Ensure select element has an accessible name",
+          "nodes": 1,
+          "target": "select"
+        }
+      ]
+    },
+    {
+      "url": "/hvac/dallas",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 30,
+          "target": ".tracking-widest.mb-1\\.5.text-\\[11px\\]"
+        },
+        {
+          "id": "empty-table-header",
+          "impact": "minor",
+          "description": "Ensure table headers have discernible text",
+          "nodes": 1,
+          "target": "th:nth-child(9)"
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "nodes": 1,
+          "target": ".mb-1"
+        },
+        {
+          "id": "link-name",
+          "impact": "serious",
+          "description": "Ensure links have discernible text",
+          "nodes": 3,
+          "target": ".p-3.rounded-lg.gap-3:nth-child(1) > a[href=\"tel:8174052444\"]"
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "description": "Ensure all page content is contained by landmarks",
+          "nodes": 252,
+          "target": ".z-0"
+        }
+      ]
+    },
+    {
+      "url": "/blog/5000-rule-hvac-repair-vs-replace",
+      "violations": [
+        {
+          "id": "landmark-one-main",
+          "impact": "moderate",
+          "description": "Ensure the document has a main landmark",
+          "nodes": 1,
+          "target": "html"
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "description": "Ensure all page content is contained by landmarks",
+          "nodes": 47,
+          "target": "article > header"
+        }
+      ]
+    },
+    {
+      "url": "/methodology",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 2,
+          "target": ".border-t:nth-child(7) > .max-w-4xl.mx-auto.sm\\:px-6 > .mb-2.tracking-widest.text-xs"
+        },
+        {
+          "id": "landmark-one-main",
+          "impact": "moderate",
+          "description": "Ensure the document has a main landmark",
+          "nodes": 1,
+          "target": "html"
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "description": "Ensure all page content is contained by landmarks",
+          "nodes": 52,
+          "target": "section:nth-child(4)"
+        }
+      ]
+    }
+  ],
+  "pageStatuses": {
+    "home__chromium__mobile": 200,
+    "blog-index__chromium__mobile": 200,
+    "blog-post__chromium__mobile": 200,
+    "methodology__chromium__mobile": 200,
+    "rizescore__chromium__mobile": 200,
+    "about__chromium__mobile": 200,
+    "contact__chromium__mobile": 200,
+    "privacy__chromium__mobile": 200,
+    "terms__chromium__mobile": 200,
+    "author-aaron__chromium__mobile": 200,
+    "author-lena__chromium__mobile": 200,
+    "hvac-dallas__chromium__mobile": 200,
+    "ac-dallas__chromium__mobile": 200,
+    "cost-dallas__chromium__mobile": 200,
+    "fakecity-404__chromium__mobile": 404,
+    "home__chromium__tablet": 200,
+    "blog-index__chromium__tablet": 200,
+    "blog-post__chromium__tablet": 200,
+    "methodology__chromium__tablet": 200,
+    "rizescore__chromium__tablet": 200,
+    "about__chromium__tablet": 200,
+    "contact__chromium__tablet": 200,
+    "privacy__chromium__tablet": 200,
+    "terms__chromium__tablet": 200,
+    "author-aaron__chromium__tablet": 200,
+    "author-lena__chromium__tablet": 200,
+    "hvac-dallas__chromium__tablet": 200,
+    "ac-dallas__chromium__tablet": 200,
+    "cost-dallas__chromium__tablet": 200,
+    "fakecity-404__chromium__tablet": 404,
+    "home__chromium__desktop": 200,
+    "blog-index__chromium__desktop": 200,
+    "blog-post__chromium__desktop": 200,
+    "methodology__chromium__desktop": 200,
+    "rizescore__chromium__desktop": 200,
+    "about__chromium__desktop": 200,
+    "contact__chromium__desktop": 200,
+    "privacy__chromium__desktop": 200,
+    "terms__chromium__desktop": 200,
+    "author-aaron__chromium__desktop": 200,
+    "author-lena__chromium__desktop": 200,
+    "hvac-dallas__chromium__desktop": 200,
+    "ac-dallas__chromium__desktop": 200,
+    "cost-dallas__chromium__desktop": 200,
+    "fakecity-404__chromium__desktop": 404,
+    "home__webkit__mobile": 200,
+    "blog-index__webkit__mobile": 200,
+    "blog-post__webkit__mobile": 200,
+    "methodology__webkit__mobile": 200,
+    "rizescore__webkit__mobile": 200,
+    "about__webkit__mobile": 200,
+    "contact__webkit__mobile": 200,
+    "privacy__webkit__mobile": 200,
+    "terms__webkit__mobile": 200,
+    "author-aaron__webkit__mobile": 200,
+    "author-lena__webkit__mobile": 200,
+    "hvac-dallas__webkit__mobile": 200,
+    "ac-dallas__webkit__mobile": 200,
+    "cost-dallas__webkit__mobile": 200,
+    "fakecity-404__webkit__mobile": 404,
+    "home__webkit__tablet": 200,
+    "blog-index__webkit__tablet": 200,
+    "blog-post__webkit__tablet": 200,
+    "methodology__webkit__tablet": 200,
+    "rizescore__webkit__tablet": 200,
+    "about__webkit__tablet": 200,
+    "contact__webkit__tablet": 200,
+    "privacy__webkit__tablet": 200,
+    "terms__webkit__tablet": 200,
+    "author-aaron__webkit__tablet": 200,
+    "author-lena__webkit__tablet": 200,
+    "hvac-dallas__webkit__tablet": 200,
+    "ac-dallas__webkit__tablet": 200,
+    "cost-dallas__webkit__tablet": 200,
+    "fakecity-404__webkit__tablet": 404,
+    "home__webkit__desktop": 200,
+    "blog-index__webkit__desktop": 200,
+    "blog-post__webkit__desktop": 200,
+    "methodology__webkit__desktop": 200,
+    "rizescore__webkit__desktop": 200,
+    "about__webkit__desktop": 200,
+    "contact__webkit__desktop": 200,
+    "privacy__webkit__desktop": 200,
+    "terms__webkit__desktop": 200,
+    "author-aaron__webkit__desktop": 200,
+    "author-lena__webkit__desktop": 200,
+    "hvac-dallas__webkit__desktop": 200,
+    "ac-dallas__webkit__desktop": 200,
+    "cost-dallas__webkit__desktop": 200,
+    "fakecity-404__webkit__desktop": 404,
+    "home__firefox__mobile": 200,
+    "blog-index__firefox__mobile": 200,
+    "blog-post__firefox__mobile": 200,
+    "methodology__firefox__mobile": 200,
+    "rizescore__firefox__mobile": 200,
+    "about__firefox__mobile": 200,
+    "contact__firefox__mobile": 200,
+    "privacy__firefox__mobile": 200,
+    "terms__firefox__mobile": 200,
+    "author-aaron__firefox__mobile": 200,
+    "author-lena__firefox__mobile": 200,
+    "hvac-dallas__firefox__mobile": 200,
+    "ac-dallas__firefox__mobile": 200,
+    "cost-dallas__firefox__mobile": 200,
+    "fakecity-404__firefox__mobile": 404,
+    "home__firefox__tablet": 200,
+    "blog-index__firefox__tablet": 200,
+    "blog-post__firefox__tablet": 200,
+    "methodology__firefox__tablet": 200,
+    "rizescore__firefox__tablet": 200,
+    "about__firefox__tablet": 200,
+    "contact__firefox__tablet": 200,
+    "privacy__firefox__tablet": 200,
+    "terms__firefox__tablet": 200,
+    "author-aaron__firefox__tablet": 200,
+    "author-lena__firefox__tablet": 200,
+    "hvac-dallas__firefox__tablet": 200,
+    "ac-dallas__firefox__tablet": 200,
+    "cost-dallas__firefox__tablet": 200,
+    "fakecity-404__firefox__tablet": 404,
+    "home__firefox__desktop": 200,
+    "blog-index__firefox__desktop": 200,
+    "blog-post__firefox__desktop": 200,
+    "methodology__firefox__desktop": 200,
+    "rizescore__firefox__desktop": 200,
+    "about__firefox__desktop": 200,
+    "contact__firefox__desktop": 200,
+    "privacy__firefox__desktop": 200,
+    "terms__firefox__desktop": 200,
+    "author-aaron__firefox__desktop": 200,
+    "author-lena__firefox__desktop": 200,
+    "hvac-dallas__firefox__desktop": 200,
+    "ac-dallas__firefox__desktop": 200,
+    "cost-dallas__firefox__desktop": 200,
+    "fakecity-404__firefox__desktop": 404
+  },
+  "flowResults": {
+    "match-form": "Btn type=\"button\" formAction=\"none\" formMethod=\"none\" — stayed on page: true",
+    "match-form-submit": "After fill+click URL: https://rizehvac.onrender.com/",
+    "match-form-success-state": "POTENTIAL pass — keyword found",
+    "tel-links": "home tel count=3, dallas tel count=15",
+    "tel-link-samples": "tel:2144142500 | tel:2144142500 | tel:8174052444 | tel:9724127800 | tel:2142191300",
+    "mailto-links": "count=5",
+    "footer-links": [
+      {
+        "href": "/hvac/tucson",
+        "text": "Tucson, AZ"
+      },
+      {
+        "href": "/ac-repair/tucson",
+        "text": "Tucson AC Repair"
+      },
+      {
+        "href": "/hvac-cost/tucson",
+        "text": "Tucson HVAC Cost"
+      },
+      {
+        "href": "/",
+        "text": "9 more cities — soon"
+      },
+      {
+        "href": "/hvac-cost/tucson",
+        "text": "Cost guides"
+      },
+      {
+        "href": "/methodology",
+        "text": "Methodology"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/privacy",
+        "text": "Privacy"
+      },
+      {
+        "href": "/terms",
+        "text": "Terms"
+      },
+      {
+        "href": "/methodology",
+        "text": "Editorial standards"
+      }
+    ],
+    "footer-broken": [
+      {
+        "url": "https://rizehvac.onrender.com/hvac/tucson",
+        "text": "Tucson, AZ",
+        "status": 404
+      },
+      {
+        "url": "https://rizehvac.onrender.com/ac-repair/tucson",
+        "text": "Tucson AC Repair",
+        "status": 404
+      },
+      {
+        "url": "https://rizehvac.onrender.com/hvac-cost/tucson",
+        "text": "Tucson HVAC Cost",
+        "status": 404
+      },
+      {
+        "url": "https://rizehvac.onrender.com/hvac-cost/tucson",
+        "text": "Cost guides",
+        "status": 404
+      }
+    ],
+    "header-nav": [
+      {
+        "href": "/",
+        "text": "RIZE"
+      },
+      {
+        "href": "/",
+        "text": "Services"
+      },
+      {
+        "href": "#methodology",
+        "text": "About"
+      },
+      {
+        "href": "/",
+        "text": "Cities"
+      },
+      {
+        "href": "/",
+        "text": "Blog"
+      },
+      {
+        "href": "tel:5202072500",
+        "text": "(520) 207-2500"
+      },
+      {
+        "href": "#hero",
+        "text": "Let's Connect"
+      }
+    ],
+    "methodology-faq": "details count=0 (no FAQ accordion)",
+    "methodology-anchors": [
+      "#methodology",
+      "#hero"
+    ],
+    "blog-external-links": [
+      {
+        "href": "https://www.trane.com/residential/en/resources/glossary/",
+        "text": "(Trane consumer guidance )",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "href": "https://www.energy.gov/energysaver/heat-and-cool",
+        "text": "(U.S. DOE Energy Saver )",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "href": "https://www.energystar.gov/products/heating_cooling",
+        "text": "(ENERGY STAR HVAC calculator )",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "href": "https://www.epa.gov/section608",
+        "text": "(EPA — Section 608 ozone-depleting refri",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "href": "https://www.ahrinet.org/",
+        "text": "(AHRI residential HVAC reliability data ",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "href": "https://www.irs.gov/forms-pubs/about-form-5695",
+        "text": "(IRS Form 5695 instructions )",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "href": "https://www.takealoadofftexas.com/",
+        "text": "(Take A Load Off Texas — official progra",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "href": "https://www.energystar.gov/products/heating_cooling",
+        "text": "ENERGY STAR HVAC efficiency guidance",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "href": "https://www.energy.gov/energysaver/heat-and-cool",
+        "text": "U.S. DOE Energy Saver — heating & coolin",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "href": "https://www.acca.org/standards/technical-manuals/manual-j",
+        "text": "ACCA Manual J load calculation standard",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "href": "https://www.irs.gov/forms-pubs/about-form-5695",
+        "text": "IRS Form 5695 — Section 25C residential ",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "href": "https://www.ahrinet.org/",
+        "text": "AHRI residential HVAC reliability data",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      }
+    ],
+    "blog-external-link-summary": "total=12, missing target=_blank: 0, target=_blank but no rel=noopener: 0",
+    "author-external-links": "total=1, target=_blank without noopener: 0",
+    "author-link-samples": [
+      {
+        "href": "https://www.linkedin.com/in/aaronwhittaker",
+        "target": "_blank",
+        "rel": "noopener noreferrer me"
+      }
+    ],
+    "comparison-table": "rows=11, sortable headers=0, get-quote buttons=20",
+    "map": {
+      "imgs": 0,
+      "iframes": 0,
+      "sampleSrc": ""
+    },
+    "home-img-audit": {
+      "total": 2,
+      "missingAlt": 0,
+      "emptyAlt": 0,
+      "veryShortAlt": 0,
+      "longestAlt": "A NATE-certified HVAC technician inspecting a Trane condenser at a home",
+      "samples": [
+        {
+          "src": "next/image?url=%2Fphotos%2Fdallas-hero-2400.webp&w=2400&q=75",
+          "alt": "A NATE-certified HVAC technician inspecting a Trane condense"
+        },
+        {
+          "src": "next/image?url=%2Fphotos%2Fdallas-hero-1200.webp&w=2400&q=75",
+          "alt": "Dallas, TX"
+        }
+      ]
+    },
+    "dallas-img-audit": {
+      "total": 1,
+      "missingAlt": 0,
+      "emptyAlt": 0
+    },
+    "404-behavior": "status=404, has 404 keyword=true, body length=33, has nav home link=false",
+    "skip-link": {
+      "tag": "A",
+      "text": "RIZE",
+      "href": "/",
+      "className": "flex items-center gap-2.5"
+    },
+    "keyboard-tab-order": [
+      {
+        "tag": "A",
+        "text": "RIZE"
+      },
+      {
+        "tag": "A",
+        "text": "Services"
+      },
+      {
+        "tag": "A",
+        "text": "About"
+      }
+    ]
+  },
+  "notes": []
+}

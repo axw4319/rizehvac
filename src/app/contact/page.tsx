@@ -20,7 +20,7 @@ export default function ContactPage() {
           { icon: Mail, label: "Editorial", value: "editorial@rizehvac.com", href: "mailto:editorial@rizehvac.com" },
           { icon: Mail, label: "Privacy", value: "privacy@rizehvac.com", href: "mailto:privacy@rizehvac.com" },
           { icon: Mail, label: "Legal", value: "legal@rizehvac.com", href: "mailto:legal@rizehvac.com" },
-          { icon: Phone, label: "Match concierge", value: "(520) 207-2500", href: "tel:5202072500" },
+          { icon: Phone, label: "Match concierge", value: "(214) 414-2500", href: "tel:2144142500" },
         ].map((c) => (
           <a
             key={c.label}

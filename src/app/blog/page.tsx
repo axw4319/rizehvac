@@ -3,7 +3,7 @@ import { v2Vars } from "@/lib/v2theme";
 import { V2Header } from "@/components/v2/V2Header";
 import { SiteFooter } from "@/components/shared/SiteFooter";
 import { BRANDS } from "@/lib/brands";
-import { listPublishablePosts } from "@/data/postsRegistry";
+import { listPosts } from "@/data/postsRegistry";
 import { ArrowRight, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 export default function BlogIndex() {
-  const posts = listPublishablePosts();
+  const posts = listPosts();
   return (
     <div style={{ ...v2Vars, background: "var(--brand-bg)", minHeight: "100vh", color: "var(--brand-fg)" }}>
       <V2Header phone="(214) 414-2500" cityLabel="" />
@@ -60,6 +60,14 @@ export default function BlogIndex() {
                   <span className="inline-flex items-center gap-1"><Clock size={12} /> {p.readingTimeMin} min read</span>
                   <span>·</span>
                   <span>Updated {p.dateModified}</span>
+                  {p.noindex ? (
+                    <>
+                      <span>·</span>
+                      <span className="px-2 py-0.5 rounded-sm text-[10px]" style={{ background: "var(--brand-cta)", color: "var(--brand-cta-fg)" }}>
+                        Draft (noindex)
+                      </span>
+                    </>
+                  ) : null}
                 </div>
                 <h2 className="display text-2xl md:text-3xl mb-3" style={{ color: "var(--brand-fg)" }}>
                   {p.title}

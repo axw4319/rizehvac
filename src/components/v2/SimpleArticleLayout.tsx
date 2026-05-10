@@ -17,7 +17,7 @@ export function SimpleArticleLayout({
 }) {
   return (
     <div style={{ ...v2Vars, background: "var(--brand-bg)", minHeight: "100vh", color: "var(--brand-fg)" }}>
-      <V2Header phone="(520) 207-2500" cityLabel="" />
+      <V2Header phone="(214) 414-2500" cityLabel="" />
 
       <section className="border-b" style={{ background: "var(--brand-bg-inverse)", color: "var(--brand-fg-inverse)", borderColor: "rgba(63, 169, 245, 0.18)" }}>
         <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">

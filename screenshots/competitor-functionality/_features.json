@@ -1,0 +1,140 @@
+{
+  "yelp": {
+    "url": "https://www.yelp.com/biz/d-h-air-conditioning-tucson",
+    "label": "Yelp single-business profile",
+    "status": 403,
+    "features": {
+      "lead-form": 0,
+      "phone-cta": 0,
+      "review-submit": 0,
+      "photo-upload": 0,
+      "profile-claim": 0,
+      "trust-badge": 0,
+      "filter-sort": 0,
+      "compare": 0,
+      "save-favorites": 0,
+      "photo-gallery": 0,
+      "service-area-map": 0,
+      "message-the-pro": 0,
+      "hours": 0,
+      "languages": 0,
+      "payment-methods": 0
+    },
+    "title": "yelp.com"
+  },
+  "angi": {
+    "url": "https://www.angi.com/companylist/us/tx/dallas/heating-cooling.htm",
+    "label": "Angi directory listing",
+    "status": 200,
+    "features": {
+      "lead-form": 1,
+      "phone-cta": 0,
+      "review-submit": 40,
+      "photo-upload": 0,
+      "profile-claim": 0,
+      "trust-badge": 0,
+      "filter-sort": 1,
+      "compare": 0,
+      "save-favorites": 0,
+      "photo-gallery": 142,
+      "service-area-map": 0,
+      "message-the-pro": 0,
+      "hours": 30,
+      "languages": 0,
+      "payment-methods": 0
+    },
+    "title": "Top 10 Best Heating and cooling pros in Dallas, TX | Angi"
+  },
+  "bbb": {
+    "url": "https://www.bbb.org/us/tx/dallas/category/heating-air-conditioning",
+    "label": "BBB directory + accreditation",
+    "status": 404,
+    "features": {
+      "lead-form": 2,
+      "phone-cta": 0,
+      "review-submit": 3,
+      "photo-upload": 0,
+      "profile-claim": 0,
+      "trust-badge": 0,
+      "filter-sort": 6,
+      "compare": 0,
+      "save-favorites": 0,
+      "photo-gallery": 0,
+      "service-area-map": 0,
+      "message-the-pro": 0,
+      "hours": 0,
+      "languages": 0,
+      "payment-methods": 0
+    },
+    "title": "Page not found | Better Business Bureau®"
+  },
+  "houzz": {
+    "url": "https://www.houzz.com/professionals/hvac-contractor",
+    "label": "Houzz pro listing",
+    "status": 404,
+    "features": {
+      "lead-form": 0,
+      "phone-cta": 1,
+      "review-submit": 2,
+      "photo-upload": 0,
+      "profile-claim": 0,
+      "trust-badge": 0,
+      "filter-sort": 1,
+      "compare": 0,
+      "save-favorites": 0,
+      "photo-gallery": 738,
+      "service-area-map": 0,
+      "message-the-pro": 0,
+      "hours": 0,
+      "languages": 0,
+      "payment-methods": 20
+    },
+    "title": "Page Not Found"
+  },
+  "thumbtack": {
+    "url": "https://www.thumbtack.com/k/hvac/near-me/",
+    "label": "Thumbtack marketplace",
+    "status": 200,
+    "features": {
+      "lead-form": 0,
+      "phone-cta": 0,
+      "review-submit": 1,
+      "photo-upload": 0,
+      "profile-claim": 0,
+      "trust-badge": 0,
+      "filter-sort": 1,
+      "compare": 0,
+      "save-favorites": 0,
+      "photo-gallery": 13,
+      "service-area-map": 0,
+      "message-the-pro": 0,
+      "hours": 0,
+      "languages": 0,
+      "payment-methods": 0
+    },
+    "title": "Hire the Best HVAC Contractors Near Me"
+  },
+  "homeadvisor": {
+    "url": "https://www.homeadvisor.com/c.HVAC.html",
+    "label": "HomeAdvisor lead-gen",
+    "status": 405,
+    "features": {
+      "lead-form": 1,
+      "phone-cta": 0,
+      "review-submit": 0,
+      "photo-upload": 0,
+      "profile-claim": 0,
+      "trust-badge": 0,
+      "filter-sort": 0,
+      "compare": 0,
+      "save-favorites": 0,
+      "photo-gallery": 0,
+      "service-area-map": 5,
+      "message-the-pro": 1,
+      "hours": 0,
+      "languages": 0,
+      "payment-methods": 0
+    },
+    "title": ""
+  }
+}

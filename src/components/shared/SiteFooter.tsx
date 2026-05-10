@@ -20,10 +20,10 @@ export function SiteFooter({ brand }: { brand: Brand }) {
             Cities
           </div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href="/hvac/tucson">Tucson, AZ</a></li>
-            <li><a href="/ac-repair/tucson">Tucson AC Repair</a></li>
-            <li><a href="/hvac-cost/tucson">Tucson HVAC Cost</a></li>
-            <li><a href="/" style={{ opacity: 0.7 }}>9 more cities — soon</a></li>
+            <li><a href="/hvac/dallas">Dallas, TX</a></li>
+            <li><a href="/ac-repair/dallas">Dallas AC Repair</a></li>
+            <li><a href="/hvac-cost/dallas">Dallas HVAC Cost</a></li>
+            <li><a href="mailto:editorial@rizehvac.com?subject=City+request" style={{ opacity: 0.7 }}>Request your city</a></li>
           </ul>
         </div>
         <div>
@@ -31,8 +31,10 @@ export function SiteFooter({ brand }: { brand: Brand }) {
             Resources
           </div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href="/hvac-cost/tucson">Cost guides</a></li>
+            <li><a href="/blog">Blog + guides</a></li>
+            <li><a href="/what-is-rizescore">What is RizeScore™</a></li>
             <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/for-contractors">For contractors</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>

@@ -2,10 +2,9 @@ import { v2Vars } from "@/lib/v2theme";
 import { V2Header } from "./V2Header";
 import { SiteFooter } from "@/components/shared/SiteFooter";
 import { BRANDS } from "@/lib/brands";
-import { listCities } from "@/data/cityRegistry";
-import { CITIES as ALL_SLUGS } from "@/data/_cities";
-import { ArrowRight, Award, MapPin, Phone, ShieldCheck, Star } from "lucide-react";
+import { ArrowRight, Award, MapPin, Phone, Star } from "lucide-react";
 import Image from "next/image";
+import { MatchForm } from "./MatchForm";
 
 const HERO_CHIPS = [
   "NATE certified",
@@ -26,19 +25,6 @@ const HERO_TRUST = [
   { label: "Cited 14 sources", sublabel: "ROC + BBB + EPA" },
 ];
 
-const CITY_LABELS: Record<string, { city: string; state: string; tagline: string }> = {
-  dallas: { city: "Dallas", state: "TX", tagline: "7.6M metro · 110+ days over 90°F annually" },
-  "fort-worth": { city: "Fort Worth", state: "TX", tagline: "Tarrant County · brick-home retrofits" },
-  arlington: { city: "Arlington", state: "TX", tagline: "Mid-cities DFW · stadium district" },
-  plano: { city: "Plano", state: "TX", tagline: "North DFW · Fortune 500 corridor" },
-  frisco: { city: "Frisco", state: "TX", tagline: "Far North DFW · post-2010 builds" },
-  houston: { city: "Houston", state: "TX", tagline: "7.5M metro · humid Gulf summers" },
-  austin: { city: "Austin", state: "TX", tagline: "2.4M metro · tech-corridor growth" },
-  "san-antonio": { city: "San Antonio", state: "TX", tagline: "2.6M metro · year-round cooling" },
-  phoenix: { city: "Phoenix", state: "AZ", tagline: "5M metro · America's hottest large city" },
-  atlanta: { city: "Atlanta", state: "GA", tagline: "6.1M metro · humid southeast" },
-};
-
 function StarRow({ count = 5 }: { count?: number }) {
   return (
     <span className="inline-flex items-center gap-0.5">
@@ -50,12 +36,9 @@ function StarRow({ count = 5 }: { count?: number }) {
 }
 
 export function HomePage() {
-  const liveCities = listCities();
-  const liveSlugs = new Set(liveCities.map((c) => c.slug));
-
   return (
     <div style={{ ...v2Vars, background: "var(--brand-bg)", minHeight: "100vh", color: "var(--brand-fg)" }}>
-      <V2Header phone="(520) 207-2500" cityLabel="" />
+      <V2Header phone="(214) 414-2500" cityLabel="" />
 
       {/* HERO — vB editorial layout */}
       <section
@@ -135,72 +118,15 @@ export function HomePage() {
           </div>
 
           <aside className="md:col-span-5 lg:col-span-5">
-            <form
-              className="rounded-xl shadow-2xl p-5 md:p-6"
-              style={{ background: "var(--brand-surface)", border: "1px solid var(--brand-border)" }}
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <ShieldCheck size={18} style={{ color: "var(--brand-accent)" }} />
-                <div className="text-xs uppercase font-semibold tracking-wider" style={{ color: "var(--brand-fg-soft)" }}>
-                  Get matched in 60 seconds
-                </div>
-              </div>
-              <h3 className="display text-3xl mb-1" style={{ color: "var(--brand-fg)" }}>
-                Free quotes from our top 3
-              </h3>
-              <p className="text-sm mb-5" style={{ color: "var(--brand-fg-soft)" }}>
-                We&apos;ll send your ZIP and issue to the three closest contractors on this list. They each send a written quote within 24 hours.
-              </p>
-
-              <div className="grid grid-cols-2 gap-3 mb-3">
-                <input
-                  type="text"
-                  inputMode="numeric"
-                  maxLength={5}
-                  placeholder="ZIP code"
-                  className="rounded-md border-2 px-3.5 py-3 text-base"
-                  style={{ borderColor: "var(--brand-border-strong)", background: "var(--brand-surface)" }}
-                />
-                <select
-                  defaultValue=""
-                  className="rounded-md border-2 px-3.5 py-3 text-base appearance-none"
-                  style={{ borderColor: "var(--brand-border-strong)", background: "var(--brand-surface)" }}
-                >
-                  <option value="" disabled>What&apos;s the issue?</option>
-                  <option>AC not cooling</option>
-                  <option>No heat</option>
-                  <option>Loud noises</option>
-                  <option>Replacement</option>
-                  <option>Tune-up</option>
-                </select>
-              </div>
-              <input
-                type="email"
-                placeholder="Email for your quote"
-                className="w-full rounded-md border-2 px-3.5 py-3 text-base mb-4"
-                style={{ borderColor: "var(--brand-border-strong)", background: "var(--brand-surface)" }}
-              />
-              <button
-                type="button"
-                className="display w-full rounded-md py-3.5 text-lg font-extrabold inline-flex items-center justify-center gap-2 tracking-wider"
-                style={{ background: "var(--brand-cta)", color: "var(--brand-cta-fg)" }}
-              >
-                Match me with 3 contractors <ArrowRight size={18} />
-              </button>
-
-              <div className="mt-4 pt-4 border-t flex items-center gap-2 text-xs" style={{ borderColor: "var(--brand-border)", color: "var(--brand-fg-soft)" }}>
-                <StarRow />
-                <span><strong style={{ color: "var(--brand-fg)" }}>4.9</strong> from 2,378 matched homeowners</span>
-              </div>
-            </form>
+            <MatchForm variant="vertical" />
 
             <a
-              href="tel:5202072500"
+              href="tel:2144142500"
               className="mt-3 flex items-center justify-center gap-2 text-sm font-semibold rounded-md py-3 border-2"
               style={{ background: "rgba(255,255,255,0.06)", color: "var(--brand-fg-inverse)", borderColor: "var(--brand-fg-inverse)", backdropFilter: "blur(8px)" }}
             >
               <Phone size={16} style={{ color: "var(--brand-cta)" }} />
-              Or call us 24/7 — <strong>(520) 207-2500</strong>
+              Or call us 24/7 — <strong>(214) 414-2500</strong>
             </a>
           </aside>
         </div>
@@ -223,78 +149,69 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* CITY GRID */}
+      {/* DALLAS-ONLY FLAGSHIP SECTION */}
       <section className="py-14 md:py-20" style={{ background: "var(--brand-surface)" }}>
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "var(--brand-cta)" }}>
-            Find your city
+            Now serving Dallas-Fort Worth
           </div>
           <h2 className="display text-4xl md:text-5xl mb-3" style={{ color: "var(--brand-fg)" }}>
-            10 cities. 600+ contractors researched.
+            142 DFW HVAC contractors researched. 10 we&apos;d hire.
           </h2>
           <p className="text-base md:text-lg max-w-3xl" style={{ color: "var(--brand-fg-soft)" }}>
-            Pick your metro to see our top-10 rankings. We hand-vet every contractor against NATE certification, BBB rating, warranty terms, and customer review authenticity.
+            We&apos;re a Dallas-Fort Worth resident editorial team. Every contractor we list is verified against TDLR licensing, BBB filings, NATE certification rosters, and our own field research. RizeScore™ ranks them on a transparent 0-100 scale — see the full methodology.
           </p>
 
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {ALL_SLUGS.map((slug) => {
-              const meta = CITY_LABELS[slug];
-              if (!meta) return null;
-              const isLive = liveSlugs.has(slug);
-              const photoSlug = `${slug}-hero`;
-              return (
-                <a
-                  key={slug}
-                  href={isLive ? `/hvac/${slug}` : "#"}
-                  className={`group rounded-lg overflow-hidden border block ${isLive ? "" : "pointer-events-none opacity-60"}`}
-                  style={{ borderColor: "var(--brand-border)", background: "var(--brand-bg)" }}
-                >
-                  <div
-                    className="relative aspect-16/9 overflow-hidden"
-                    style={{
-                      background: isLive
-                        ? "var(--brand-bg-inverse)"
-                        : "linear-gradient(135deg, var(--brand-bg-inverse) 0%, var(--brand-accent) 100%)",
-                    }}
-                  >
-                    {isLive ? (
-                      <>
-                        <Image
-                          src={`/photos/${photoSlug}-1200.webp`}
-                          alt={`${meta.city}, ${meta.state}`}
-                          fill
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(10, 31, 62, 0.8) 100%)" }} />
-                      </>
-                    ) : (
-                      <div className="absolute inset-0 grid place-items-center">
-                        <span className="display text-7xl opacity-15" style={{ color: "var(--brand-fg-inverse)" }}>{meta.state}</span>
-                      </div>
-                    )}
-                    <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <div className="display text-3xl leading-none">{meta.city}</div>
-                      <div className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: "var(--brand-accent-bright)" }}>{meta.state}</div>
-                    </div>
-                    {!isLive ? (
-                      <div className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-sm" style={{ background: "var(--brand-fg-inverse)", color: "var(--brand-fg)" }}>
-                        Coming soon
-                      </div>
-                    ) : null}
+          <div className="mt-10 grid md:grid-cols-3 gap-4">
+            {[
+              { href: "/hvac/dallas", title: "Best HVAC contractors in Dallas", subtitle: "10 ranked by RizeScore™ — Berkeys, Strittmatter, TemperaturePro, Levy & Son, and more", cta: "View the full list" },
+              { href: "/ac-repair/dallas", title: "AC repair in Dallas", subtitle: "Top 5 same-day specialists — diagnostic costs, common failures, repair-vs-replace decisions", cta: "Find a same-day pro" },
+              { href: "/hvac-cost/dallas", title: "HVAC cost in Dallas (2026)", subtitle: "10-line pricing benchmark + 4 stackable rebates (federal, Oncor, Atmos, TXU)", cta: "See cost ranges" },
+            ].map((card) => (
+              <a
+                key={card.href}
+                href={card.href}
+                className="group rounded-xl overflow-hidden border block"
+                style={{ borderColor: "var(--brand-border)", background: "var(--brand-bg)" }}
+              >
+                <div className="relative aspect-16/9 overflow-hidden" style={{ background: "var(--brand-bg-inverse)" }}>
+                  <Image
+                    src="/photos/dallas-hero-1200.webp"
+                    alt="Dallas HVAC contractor at work"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 30%, rgba(10, 31, 62, 0.85) 100%)" }} />
+                  <div className="absolute bottom-3 left-3 right-3 text-white">
+                    <div className="display text-2xl leading-tight">{card.title}</div>
+                    <div className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: "var(--brand-accent-bright)" }}>Dallas-Fort Worth</div>
                   </div>
-                  <div className="p-4 flex items-center justify-between">
-                    <div className="text-sm" style={{ color: "var(--brand-fg-soft)" }}>
-                      <MapPin size={12} className="inline mr-1 -mt-0.5" />
-                      {meta.tagline}
-                    </div>
-                    {isLive ? (
-                      <ArrowRight size={16} style={{ color: "var(--brand-cta)" }} className="group-hover:translate-x-1 transition-transform" />
-                    ) : null}
+                </div>
+                <div className="p-4">
+                  <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--brand-fg-soft)" }}>{card.subtitle}</p>
+                  <div className="inline-flex items-center gap-1.5 text-sm font-semibold" style={{ color: "var(--brand-cta)" }}>
+                    {card.cta}
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </div>
-                </a>
-              );
-            })}
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="mt-10 rounded-xl p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-5" style={{ background: "var(--brand-muted)", border: "1px solid var(--brand-border)" }}>
+            <MapPin size={28} style={{ color: "var(--brand-cta)", flexShrink: 0 }} />
+            <div className="flex-1">
+              <div className="display text-xl mb-1" style={{ color: "var(--brand-fg)" }}>
+                Outside DFW?
+              </div>
+              <p className="text-sm" style={{ color: "var(--brand-fg-soft)" }}>
+                We&apos;re expanding into Fort Worth, Plano, Frisco, Arlington, Houston, Austin, and San Antonio next. Drop us your city — we prioritize coverage by inbound interest.
+              </p>
+            </div>
+            <a href="mailto:editorial@rizehvac.com?subject=City+request" className="display text-sm font-extrabold rounded-md px-5 py-3 tracking-wider whitespace-nowrap" style={{ background: "var(--brand-cta)", color: "var(--brand-cta-fg)" }}>
+              Request your city
+            </a>
           </div>
         </div>
       </section>
@@ -400,9 +317,9 @@ export function HomePage() {
             <a href="#methodology" className="display text-sm font-extrabold rounded-md px-6 py-3 tracking-wider" style={{ background: "var(--brand-cta)", color: "var(--brand-cta-fg)" }}>
               Read our methodology
             </a>
-            <a href="tel:5202072500" className="display text-sm font-extrabold rounded-md px-6 py-3 tracking-wider inline-flex items-center gap-2" style={{ border: "2px solid var(--brand-fg-inverse)", color: "var(--brand-fg-inverse)" }}>
+            <a href="tel:2144142500" className="display text-sm font-extrabold rounded-md px-6 py-3 tracking-wider inline-flex items-center gap-2" style={{ border: "2px solid var(--brand-fg-inverse)", color: "var(--brand-fg-inverse)" }}>
               <Phone size={14} />
-              (520) 207-2500
+              (214) 414-2500
             </a>
           </div>
         </div>
